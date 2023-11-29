@@ -1,0 +1,12 @@
+1 - Para iniciar o jupyter notebook 
+    Ir até a pasta desejada usando (cd) e o nome da pasta, e (cd..) para voltar uma pasta.
+    
+    EX: (base) rafael@rafael-ThinkPad-Edge-E430:~/Documentos/GitHub/Python_DSA/Cap02$ (DEPOIS DO $) escrever (jupyter notebook) esse comendo faz com que o jupyter notebook inicialize nessa pasta.
+
+        (base) rafael@rafael-ThinkPad-Edge-E430:~/Documentos/GitHub/Python_DSA/Cap02$ jupyter notebook
+
+    Para se localizar usar o comando - pwd
+    Para criar uma nova pasta usar o comando - mkdir (e o nome desejado) = mkdir Python_DSA
+    Para entrar na pasta usar o comando - cd (cd Python_DSA)
+
+    

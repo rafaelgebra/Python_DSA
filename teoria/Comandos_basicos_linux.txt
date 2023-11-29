@@ -1,0 +1,3 @@
+    Para se localizar usar o comando - pwd
+    Para criar uma nova pasta usar o comando - mkdir (e o nome desejado) = mkdir Python_DSA
+    Para entrar na pasta usar o comando - cd (cd Python_DSA)
