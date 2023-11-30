@@ -16,16 +16,26 @@ FIM
 print('Bem vindo à Calculadora')
 n1 = float(input('Digite o primeiro números: '))
 n2 = float(input('Digite o segundo número: '))
-ope = str(input('Qual a operação? +, -, *, /'))
-if ope == '+' :
-    total = n1 + n2
-    print(total)
-elif ope == '-' :
-    total = n1 - n2
-    print(total)
-elif ope == '*':
-    total = n1 * n2
-    print(total)
-elif ope == '/':
-    total = n1 / n2
-    print(total)
+
+
+ope = ' '
+while ope in '+, -, *, /':
+    ope = str(input('Qual a operação? [ +, -, *, / ]: ')).strip()
+    if ope == '+' :
+        total = n1 + n2
+        print(f'O resultado é {total}')
+        break
+    elif ope == '-' :
+        total = n1 - n2
+        print(f'O resultado é {total}')
+        break
+    elif ope == '*':
+        total = n1 * n2
+        print(f'O resultado é {total}')
+        break
+    elif ope == '/':
+        total = n1 / n2
+        print(f'O resultado é {total}')
+        break
+    else:
+        print('Opção inválida!! Digite o símbulo da operação correta')
