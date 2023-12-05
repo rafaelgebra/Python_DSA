@@ -1,0 +1,38 @@
+dicionario é representado por {} em Python - ex: casas = {} ou casas = dict()
+Para limpar o conteudo do dicionario e lista usar o metodo,  clear() - ex: casas.clear()
+Caso queira deletar usar a palavra reservada, del - ex: del casas
+No dicionario pode separa a chaves dos valores, Ex:
+    pessoas = {'Rafael:35', 'Thatiane:35', 'Nalbert:25'}
+    O metodo pessoas.keys() retorna as chaves.
+        ['Rafael', 'Thatiane', 'Nalbert']
+    O metodo pessoas.values() retorna os valores.
+        ['35', '35', '25']
+    O metodo pessoas.itens() retorna tudo (as chaves com os valores "esse conjunto é chamado de elemento")
+        {'Rafael:35', 'Thatiane:35', 'Nalbert:25'}
+
+        Ex2:
+        dic3 = {'chave1':1230, 'chave2':[22, 453, 73.4], 'chave3':['picanha', 'fraldinha', 'alcatra']}
+        print(dic3)
+        print(dic3['chave2'])
+        print(dic3['chave3'][0].upper())
+
+Para fazer uma atualização pode usar o metodo update() - ex:
+casa_1 = {1, 2, 3}
+casa_2 = {4, 5, 6}
+
+casa_1.update(casa_2)
+      print(casa_1)
+        {1, 2, 3, 4, 5, 6}            
+
+
+dic3 = {'chave1':1230, 'chave2':[22, 453, 73.4], 'chave3':['picanha', 'fraldinha', 'alcatra']}
+print(dic3)
+print(dic3['chave2'])
+print(dic3['chave3'][0].upper())
+var1 = dic3['chave2'][0]-2 # Nessa opção é feita uma conta matemática e adicionada a uma variável a resposta.  
+print(var1)
+dic3['chave2'][0] -= 2 #Dessa maneiro pode ser feita a subtração e a atribuição na mesna linha, mas não da para imprimim direto, tem que imprimir depois como o exemplo abaixo.
+print(dic3)
+
+
+    
