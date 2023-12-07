@@ -1,15 +1,19 @@
 from time import sleep 
 
+def titulo(msg):
+    print(f'--- {msg} ---')
+
+
 print('\n')
-print('EXPLICAÇÃO DE CONDICIONAL IF, ELIF, ELSE')
-print('PRIMEIRA CONDIÇÃO')
+titulo('EXPLICAÇÃO DE CONDICIONAL IF, ELIF, ELSE')
+titulo('PRIMEIRA CONDIÇÃO')
 # Condição if(se) e else(senão)
 if 5 > 2:
     print('Verdade\n')
 else:
     print('Falso\n')
 
-print('SEGUNDA CONDIÇÃO')
+titulo('SEGUNDA CONDIÇÃO')
 # Codição if e else com variável
 dia = 'Terça'
 if dia == 'Segunda':
@@ -17,7 +21,7 @@ if dia == 'Segunda':
 else:
     print(f'Incorreto hoje é {dia} não Segunda\n')
 
-print('TERCEIRA CONDIÇÃO retorna valor Booleano True(verdade) ou False(falso)')
+titulo('TERCEIRA CONDIÇÃO retorna valor Booleano True(verdade) ou False(falso)')
 if dia == 'Segunda':
     print('Correto hojé Segunda \n')
 elif dia == 'Terça':
@@ -25,7 +29,7 @@ elif dia == 'Terça':
 else:
     print('Tente novamente \n')
 
-print('OPERADORES RELACIONAIS')
+titulo('OPERADORES RELACIONAIS')
 
 print('<, >, <=, >=, ==, !=')
 print('6 > 3?   ',6 > 3)
@@ -33,20 +37,20 @@ print('3 > 7?   ',3 > 7)
 print('4 >= 4?  ',4 >= 4)
 print('4 <= 4?  ',4 <= 4)
 print('4 == 4?  ',4 == 4)
-print('4 != 4?  ',4 != 4)
+print('4 != 4?  ',4 != 4,'\n')
 
-print('\nOPERADORES LOGICOS')
+titulo('OPERADORES LOGICOS')
 print('and  (e)')
 print('or   (ou)')
 print('not  (não)\n')
 
-print('TRABALHANDO COM LOOP FOR (PARA)')
+titulo('TRABALHANDO COM LOOP FOR (PARA)')
 
 tupla = (2, 3 ,4)
 for i in tupla: # i representa o valor dentro do array
     print(i, end=', ')
 print('\n')
-print('TRABALHANDO COM LOOP FOR (PARA) com range()')
+titulo('TRABALHANDO COM LOOP FOR (PARA) com range()')
 for contador in range(0, 5):
     print(contador, end=', ')
 print('\n')
@@ -54,7 +58,7 @@ for caracter in 'Python é uma linguagem de programação divertida!':
     print(caracter, end='')
 print('\n')
 
-print('LOOP FOR ANINHADO')
+titulo('LOOP FOR ANINHADO')
 lista1 = [0, 1, 2, 3, 4]
 lista2 = [1, 2, 3]
 
@@ -68,7 +72,7 @@ for elementos_lista1 in lista1:
         sleep(0.1)
 print('\n')
 
-print('PROCURANDO NUMERO 47 DENTRO DE DUAS LISTAS')
+titulo('PROCURANDO NUMERO 47 DENTRO DE DUAS LISTAS')
 lista3 = [10, 16, 24, 39, 47, 2, 3, 4, 5]
 lista4 = [32, 2 , 3, 4, 89, 47, 76, 12]
 c1 = 0
@@ -81,3 +85,71 @@ for elementos_lista3 in lista3:
             print(f'Foi encontrado o elemento (47) na posição ({c1}) da lista3 e na posição ({c2}) da lista4')
 print('\n')
 
+
+titulo('EXEMPLO DE LOOP FOR "procurando Maior e Menor número"')
+matriz = [[42, 23, 34], [100, 215, 114, 1], [10.1, 98.7, 12.3]]
+maior_Numero = menor_numero = c = 0
+for linha in matriz:
+    for numero in linha:
+        if c == 0:
+            menor_numero = numero
+            c += 1
+        else:
+            if numero > maior_Numero:
+                maior_Numero = numero
+            elif numero < menor_numero:
+                menor_numero = numero
+print()
+print('Essa são os elementos da matriz', matriz,'\n')
+print(f'O maior número encontrado é {maior_Numero}')
+print(f'O menor número encontrado é {menor_numero}\n')
+
+titulo('USANDO LOOP FOR EM DICIONARIO')
+print('')
+
+dic = {'k1':'Python', 'k2':'R', 'k3':'Scala'}
+
+titulo('essa opção só mostra as chaves (keys) do dicionario')
+for item in dic:
+    print(item)
+print()
+titulo('Essa opção (items), mostra as chaves (keys), e valor (values)') 
+for k, v in dic.items():
+    print(f'O valor "{v}" pentence a chave "{k}"')
+print()
+
+print()
+titulo('USANDO O LOOP WHILE')
+titulo('EX1 - Como ponto de "chegado pré-definido"')
+valor = 0
+fim = valor + 10
+while valor <= fim:
+    print(valor, end=', ')
+    valor += 1
+print()
+
+print()
+titulo('MAIS UM EXEMPLO DE LOOP WHILE, AGORA USANDO O ELSE NO FINAL.')
+x = 0
+while x < 10:
+    print(f'O valor de x nesta inteação é: {x}')
+    print('x ainda é menor que o limite, por isso será somando mais 1')
+    x += 1
+else:
+    print()
+    print(f'LOOP WHILE foi conclúido. O número {x} é o limite, por isso ele não foi somado')
+print()
+
+titulo('Manupular WHILE com as cláusulas PASS (passar), BREAK (quebrar, "sair"), CONTINUE (continuar)')
+valor = 0
+while valor < 10:
+    if valor == 4:
+        break
+    else:
+        pass
+        if valor == 3:
+            print(valor, end=' ')
+        else:
+            print(valor, end=', ')
+    valor += 1
+print()
