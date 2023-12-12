@@ -1,3 +1,4 @@
+from platform import python_version
 from time import sleep 
 
 def titulo(msg):
@@ -6,10 +7,13 @@ def titulo(msg):
     print()
 
 
-def lento(msg):
+def lento(msg):# Lento para frase em str
     for letra in msg:
         print(letra, end='', flush=True)
         sleep(0.001)
+
+versao = python_version()
+titulo(f'A versão do python que estamos usado é: {versao}')
 
 
 titulo('EXPLICAÇÃO DE CONDICIONAL IF, ELIF, ELSE')
@@ -76,7 +80,7 @@ for elementos_lista1 in lista1:
     for elementos_lista2 in lista2:
         total = elementos_lista1 * elementos_lista2
         print(f' {elementos_lista1} * {elementos_lista2:} = {total:>2}' )
-        sleep(0.1)
+        sleep(0.03)
 print('\n')
 
 titulo('PROCURANDO NUMERO 47 DENTRO DE DUAS LISTAS')
@@ -192,3 +196,7 @@ for num in range(2, 31):
 print()
 # Imprimindo a lista de números primos
 print(lento(f'Esse são os números primos entre 2 à 30 {primos}.'))
+
+titulo('COMO FUNCIONA A FUNÇÃO RANGE')
+for i in range(1, 11):
+    print(i, end='')
