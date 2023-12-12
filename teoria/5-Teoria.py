@@ -11,6 +11,7 @@ def lento(msg):# Lento para frase em str
     for letra in msg:
         print(letra, end='', flush=True)
         sleep(0.001)
+    print('\nFIM')
 
 versao = python_version()
 titulo(f'A versão do python que estamos usado é: {versao}')
@@ -200,3 +201,29 @@ print(lento(f'Esse são os números primos entre 2 à 30 {primos}.'))
 titulo('COMO FUNCIONA A FUNÇÃO RANGE')
 for i in range(1, 11):
     print(i, end='')
+
+titulo('Exemplo de RANGE, com lista')
+
+lista5 = ['Abacaxi', 'Banana', 'Morango', 'Uva']
+lista_Tamanho = len(lista5)
+print(f'Esse é os "valores" conteúdo da lista5: {lista5}')
+print(f'Esse é o tamanha da lista5 com a função len(lista5): {lista_Tamanho}')
+print()
+for i in range(0, lista_Tamanho):
+    print(lista5[i])
+
+print(lento('Posição é com colchete []. Ex: lista5[i]'))
+print()
+
+titulo('METODOS')
+metodos = 'Tudo em Python é o objeto. cada objeto tem métodos e atributos.\n      -Atributos são propriedades, características do objetivos. \n      -Métodos são funções com ações que podem ser executadas nos objetos.'
+lento(metodos)
+titulo('A função help() explica com ultizar cada método de um objeto')
+print('Ex: help(print)')
+#help(print)# Para sair da função help() usar shift + q
+
+titulo('Para listar/mostrar todos os métodos e atributos de um objeto usar: dir(lista5)')
+print('Ex: ')
+listar = dir(lista5)
+for i in listar:
+    print(f"'{i}'")
