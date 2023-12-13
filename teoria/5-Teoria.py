@@ -11,7 +11,7 @@ def lento(msg):# Lento para frase em str
     for letra in msg:
         print(letra, end='', flush=True)
         sleep(0.001)
-    print('\nFIM')
+    print('\n')
 
 versao = python_version()
 titulo(f'A versão do python que estamos usado é: {versao}')
@@ -227,3 +227,25 @@ print('Ex: ')
 listar = dir(lista5)
 for i in listar:
     print(f"'{i}'")
+
+titulo('Tipo especifico de função - LAMBDA (função anônima)')
+print('Exemplo de Função "COMUM" em python')
+def potencia(num):
+    resultado = num ** 2
+    return resultado
+print('Esse é o resultado da função ', potencia(5),'\n')
+
+print('Essa proxima função é feita de forma resulmida')
+def potencia2(num):
+    return num ** 2
+print('Esse é o resultado da função resulmida', potencia2(5),'\n')
+
+print('Agora é mais resulmido ainda, tudo na mesmoa linha de codigo')
+def potencia3(num): return num ** 2
+print('Esse resultado é com o código tudo na mesma linha ', potencia3(5),'\n')
+
+lambda_Texto = 'Normalmente não é atribuido uma variável a uma expressão em Python.\nA expressão LAMBDA cria uma função em tempo de execução (Não precisa nominar a função), EX:'
+print(lento(lambda_Texto))
+
+potencia4 = lambda num: num ** 2
+print('Esse resuldato é usado a função LAMBDA \n(potencia4 = lambda num: num ** 2) = ', potencia4(5),'\n')
