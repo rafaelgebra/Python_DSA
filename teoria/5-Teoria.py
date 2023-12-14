@@ -248,4 +248,15 @@ lambda_Texto = 'Normalmente não é atribuido uma variável a uma expressão em 
 print(lento(lambda_Texto))
 
 potencia4 = lambda num: num ** 2
-print('Esse resuldato é usado a função LAMBDA \n(potencia4 = lambda num: num ** 2) = ', potencia4(5),'\n')
+print(f'Esse resuldato é usado a função LAMBDA \n(potencia4 = lambda num: num ** 2) =  {potencia4(5)}\n')
+
+print('Segundo EX:\nOperadores de comaparação retornam boolean: TRUE or FALSE \n')
+par = lambda x: x % 2 == 0
+print(f'Esse é um exemplo usando a função LAMBDA.\npar = lambda x: x % 2 == 0: {par(3)}\n')
+print(f'Esse é um exemplo usando a função LAMBDA.\npar = lambda x: x % 2 == 0: {par(4)}\n')
+
+print('Terceiro EX:\n Usando A função LAMBDA em sting (str)\n')
+frist = lambda s: s[0]
+print(f'Com essa opção consegue fazer a separação de caracter por indice, nessa caso frist = lambda s: s[0] "{frist("Python")}"\n')
+reverso = lambda s : s[::-1]
+print(f'Também da para fazer a reverção com por analise de string. reverso = lambda s : s[::-1] "{reverso("Python")}"\n')
