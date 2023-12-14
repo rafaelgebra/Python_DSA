@@ -282,4 +282,4 @@ print('O código é o seguinte.\nfor x in lista_Frutas:\n    if "m".lower() in x
 print(f'Esse é o resultado de um loop FOR sem usar a list comprehension: {nova_Lista}.\n')
 print('A proxima expressão é usando o metodo de list comprehension.\n ')
 nova_Lista = [x for x in lista_Frutas if 'm'.lower() in x]
-print(nova_Lista)
+print(f'Essa é a lista usando a list comprehension. {nova_Lista}.\nPode notar que não tem alteração, a diferença é no linha de comando.\n')
