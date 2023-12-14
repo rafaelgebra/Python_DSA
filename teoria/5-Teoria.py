@@ -3,7 +3,8 @@ from time import sleep
 
 def titulo(msg):
     print()
-    print(f'--- {msg} ---')
+    print(f'--- {msg} ---', flush=True)
+    #sleep(0.3)
     print()
 
 
@@ -260,3 +261,25 @@ frist = lambda s: s[0]
 print(f'Com essa opção consegue fazer a separação de caracter por indice, nessa caso frist = lambda s: s[0] "{frist("Python")}"\n')
 reverso = lambda s : s[::-1]
 print(f'Também da para fazer a reverção com por analise de string. reverso = lambda s : s[::-1] "{reverso("Python")}"\n')
+
+titulo('List Comprehension e Dict Comprehension "é uma forma de resulmir o função em lista e dicionario"')
+print('Ex 1:\n')
+
+print('Uma expressão em list comprehension segue a seguinte ideia: [x for x in range(10)].\nIsso significa o seguinte.\nO primeiro x é o retorno da função, for(para) valor(x) in(dentro/em) range(0, 10)')
+lista_Numeros = [x for x in range(10)]
+print(lista_Numeros,'\n')
+
+print('Ex 2: Usando operadores condicionais')
+lista_Numeros2 = [x for x in range(10) if x <= 5]
+print(f'Essa resposta foi filtrada com operadores condicionais (if, elif, else) e relacionais (<, <=, ==, !=, >=, > )  e só vai aparecer os números 0 à 5:\nA expressão é lista_Numeros2 = [x for x in range(10) if x <= 5] = {lista_Numeros2}\n')
+
+lista_Frutas = ['banana', 'abacaxi', 'melancia', 'cereja', 'manga']
+nova_Lista = []
+for x in lista_Frutas:
+    if 'm'.lower() in x:
+        nova_Lista.append(x)
+print('O código é o seguinte.\nfor x in lista_Frutas:\n    if "m".lower() in x:z\n        nova_Lista.append(x)\nprint(nova_Lista)')        
+print(f'Esse é o resultado de um loop FOR sem usar a list comprehension: {nova_Lista}.\n')
+print('A proxima expressão é usando o metodo de list comprehension.\n ')
+nova_Lista = [x for x in lista_Frutas if 'm'.lower() in x]
+print(nova_Lista)
