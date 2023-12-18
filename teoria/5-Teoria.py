@@ -282,4 +282,11 @@ print('O código é o seguinte.\nfor x in lista_Frutas:\n    if "m".lower() in x
 print(f'Esse é o resultado de um loop FOR sem usar a list comprehension: {nova_Lista}.\n')
 print('A proxima expressão é usando o metodo de list comprehension.\n ')
 nova_Lista = [x for x in lista_Frutas if 'm'.lower() in x]
-print(f'Essa é a lista usando a list comprehension. {nova_Lista}.\nPode notar que não tem alteração, a diferença é no linha de comando.\n')
+print(f'Essa é a lista usando a list comprehension. {nova_Lista}.\nPode notar que não tem alteração, a diferença é no linha de comando.')
+
+titulo('Dict Comprehension --- Dicionario, é um conjunto de pares contendo chave e valor. Ex: dic_Aluno = {"Bob":25, "Thati": 20}')
+dict_Aluno = {'Bob':68, 'Michel':84, 'Zico':57, 'Ana':93 }
+print(f'Esse é o dicionario dict_Aluno com os seus pares de chave:valor: {dict_Aluno} \n. Essa linha de código é a original')
+dict_Alunos_Status = {k:('Aprovado' if v > 70 else 'Reprovado') for (k, v) in dict_Aluno.items()}
+
+print(f'Com a modificação no código acrescentando ("Aprovado" if v > 70 else "Reprovado") no lugar do resultado de v, conseguimos fazer a manipulação de status.\nAntes era {dict_Aluno}\nAgora é {dict_Alunos_Status}\n')
