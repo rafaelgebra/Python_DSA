@@ -35,6 +35,14 @@ def soma1(arg1, arg2):
     return total
 
 
+def Cel(*num):
+    for i in(num):
+        for v in i:
+            n = (v * 9/5) + 32
+            print(f'Para a temperatura em {v}Cº a converção fica {n:.2f}Fº')
+
+
+
 titulo(f'A versão que estamos trabalhando é {python_version()}')
 
 titulo('Exercícios - Métodos e Funções (Solução)')
@@ -84,10 +92,20 @@ titulo('Ex:7')
 # (que será estudada no próximo capítulo). Isso permite aplicar sua função a cada elemento da lista
 # Como descobrir a fórmula matemática que converte de Celsius para Fahrenheit? Pesquise!!!
 Celsius = [39.2, 36.5, 37.3, 37.8]
-
-def Cel(*num):
-    for i in(num):
-        for v in i:
-            n = (v * 9/5) + 32
-            print(f'Para a temperatura em {v}Cº a converção fica {n:.2f}Fº')
 Cel(Celsius)
+
+titulo('Ex:8')
+# Exercício 8 - Crie uma list comprehension que imprima o quadrado dos números de 1 a 10
+# Também da para fazer assim. print([x**2 for x in range(1,11)])
+quadrado = [x**2 for x in range(1,11)]
+print(quadrado)
+
+
+titulo('Ex:9')
+# Exercício 9 - Crie uma list comprehension que imprima as palavras com a letra a no nome
+palavras = ["maça", "coiote", "banana", "terreno", "Python"]
+print([x for x in palavras if 'a' in x ]) # também da para por esso dentro de uma variável
+
+titulo('Ex:10')
+# Exercício 10 - Crie uma list comprehension que imprima os números menores que 5 em um intervalo de 1 a 10
+print([x for x in range(1, 10) if x < 5])
