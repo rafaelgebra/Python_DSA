@@ -73,3 +73,34 @@ while contador < 100:
         break
 
 titulo('Ex:7')
+# Exercício 7 - Crie uma lista vazia e uma variável com valor 4. Enquanto o valor da variável for menor ou igual a 20, 
+# adicione à lista, apenas os valores pares e imprima a lista
+lista2 = []
+numero = 4
+
+while numero <= 20:
+    if numero % 2 == 0:
+        lista2.append(numero)
+    numero += 1
+print(lista2)
+
+titulo('Ex:8')
+# Exercício 8 - Transforme o resultado desta função range em uma lista: range(5, 45, 2)
+nums = [x for x in range(5, 45, 2)]
+print(nums)
+
+titulo('Ex:9')
+# Exercício 9 - Faça a correção dos erros no código abaixo e execute o programa. Dica: são 3 erros.
+temperatura = float(input('Qual a temperatura? '))
+if temperatura > 30:
+    print('Vista roupas leves.')
+else:
+    print('Busque seus casacos.')
+
+titulo('Ex:10')
+# Exercício 10 - Faça um programa que conte quantas vezes a letra "r" aparece na frase abaixo. Use um placeholder na 
+# sua instrução de impressão
+
+# “A gratidão é a virtude das almas nobres. O quão feliz é uma pessoa depende da profundidade de sua gratidão.” 
+frase = "A gratidão é a virtude das almas nobres. O quão feliz é uma pessoa depende da profundidade de sua gratidão." 
+print(f'Tem {frase.count("r")} vezes a letra "r" nessa frase. ')
