@@ -290,3 +290,5 @@ print(f'Esse é o dicionario dict_Aluno com os seus pares de chave:valor: {dict_
 dict_Alunos_Status = {k:('Aprovado' if v > 70 else 'Reprovado') for (k, v) in dict_Aluno.items()}
 
 print(f'Com a modificação no código acrescentando ("Aprovado" if v > 70 else "Reprovado") no lugar do resultado de v, conseguimos fazer a manipulação de status.\nAntes era {dict_Aluno}\nAgora é {dict_Alunos_Status}\n')
+
+titulo('Manipulação de Arquivos em Python')
