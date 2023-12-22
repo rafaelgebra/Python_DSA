@@ -11,7 +11,7 @@ def titulo(msg):
 def lento(msg):# Lento para frase em str
     for letra in msg:
         print(letra, end='', flush=True)
-        sleep(0.001)
+        sleep(0.009)
     print('\n')
 
 versao = python_version()
@@ -292,3 +292,38 @@ dict_Alunos_Status = {k:('Aprovado' if v > 70 else 'Reprovado') for (k, v) in di
 print(f'Com a modificação no código acrescentando ("Aprovado" if v > 70 else "Reprovado") no lugar do resultado de v, conseguimos fazer a manipulação de status.\nAntes era {dict_Aluno}\nAgora é {dict_Alunos_Status}\n')
 
 titulo('Manipulação de Arquivos em Python')
+
+print('Informação: "open" é abrir em inglês')
+print('Informação: "r" = "read" é ler em inglês\n')
+
+arq1 = open('Cap06/arquivos/arquivo1.txt', 'r')
+print('Para ver o tipo do objeto usar o metodo - type()')
+print(type(arq1),'\n')
+
+print('Para LER o arquivo usar o metodo - read() = r')
+print(arq1.read(),'\n')
+
+print('Contar o números de caracteres. Para fazer isso só usar o metodo - tell()')
+print(arq1.tell(),'\n')
+
+print('Imprimento o arquivo novamente sem resetar o locar do "cursor"')
+print(f'O arquivo foi "impresso" porém não tem o que imprimir, porque o cursor esta no fim da frase.{arq1.read()}\n')
+
+print('Agora vamos retornar para o cursor no início do arquivo, usar o metodo - seek(0,0) = seek é metodo, 0,0 é o posição do "cursor" nesse caso esta trazendo para o inicio da frase.')
+arq1.seek(0,0)
+print(arq1.read(),'\n')
+
+print('Com o metodo read() da para escoler até que letra quer que "imprima":')
+arq1.seek(0,0)
+print(arq1.read(23))
+print('Se chamar novamente a leitura ele continua da onde parou a leitura:')
+print(arq1.read())
+print('Para voltar do inicio é do usar novamente o metodo seek(0,0) que o "cursor volta para o inicio da frase"')
+arq1.seek(0,0)
+print(arq1.read(),'\n')
+
+
+lento('Agora vamos abrir o arquivo para gravação')
+
+
+
