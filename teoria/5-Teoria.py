@@ -1,5 +1,6 @@
 from platform import python_version
 from time import sleep 
+import pandas as pd
 
 def titulo(msg):
     print()
@@ -346,3 +347,54 @@ print(arq2.read())
 arq2.seek(0,0)
 print(arq2.read())
 
+
+titulo('Abrindo Dataset em linha Única')
+f = open('Cap06/arquivos/salarios.csv', 'r')
+data = f.read()
+rows = data.split('\n')
+#print(rows)
+
+titulo('Dividindo Um Arquivo em colunas')
+f = open('Cap06/arquivos/salarios.csv', 'r')
+data = f.read()
+rows = data.split('\n')
+full_data = []
+for row in rows:
+    split_row = row.split(',')
+    full_data.append(split_row)
+#print(full_data)
+
+titulo('Contando as linha de um arquivo')
+f = open('Cap06/arquivos/salarios.csv', 'r')
+data = f.read()
+rows = data.split('\n')
+full_data = []
+for row in rows:
+    split_row = row.split(',')
+    full_data.append(split_row)
+count = 0
+for row in full_data:
+    count += 1
+print(f'O arquivo "salarios.csv" tem {count} linhas')
+
+titulo('Contando o número de colunas de um arquivo')
+f = open('Cap06/arquivos/salarios.csv', 'r')
+data = f.read()
+rows = data.split('\n')
+full_data = []
+for row in rows:
+    split_row = row.split(',')
+    full_data.append(split_row)
+first_row = full_data[0]
+count1 = 0
+for calumn in first_row:
+    count1 += 1
+print(f'O total de colunas é {count1}.')
+
+titulo('Introdução ao PANDAS = Modulo adicional')
+
+print(f'Essa é a versão do PANDAS que estamos usando {pd.__version__}')
+arquivo3 = 'Cap06/arquivos/salarios.csv'
+df = pd.read_csv(arquivo3) #df = dataframe
+print(df.head())
+print(df['Position Title'].value_counts())

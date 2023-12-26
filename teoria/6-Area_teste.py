@@ -1,5 +1,5 @@
 from time import sleep
-
+import pandas as pd
 
 def titulo(msg):
     print()
@@ -11,51 +11,9 @@ def titulo(msg):
 def lento(msg):# Lento para frase em str
     for letra in msg:
         print(letra, end='', flush=True)
-        sleep(0.001)
+        sleep(0.009)
     print('\n')
 
+titulo('Manipulação de arquivos - Parte 2. Formados TXT, CSV, JSON')
+lento('TXT é a externsão de arquivos para arquivos de texto puro. Um arquivo TXT é uma arquivo de texto simples sem formação, com negrito, itálico ou fontes diferentes. Eles pode ser aberto e editado com muitos aplicativos diferentes, incluindo editores de texto, processandores de texto e IDEs. Arquivos TXT são amplamentes utilizados para armazenar dados de texto simples, como listas, notas e documentos de texto. Eles são universais e podem ser lidos em praticamente qualquer dispositivo ou sistemas operacional.')
 
-titulo('Abrindo Dataset em linha Única')
-
-f = open('Cap06/arquivos/salarios.csv', 'r')
-data = f.read()
-rows = data.split('\n')
-#print(rows)
-
-titulo('Dividindo Um Arquivo em colunas')
-
-f = open('Cap06/arquivos/salarios.csv', 'r')
-data = f.read()
-rows = data.split('\n')
-full_data = []
-for row in rows:
-    split_row = row.split(',')
-    full_data.append(split_row)
-#print(full_data)
-
-titulo('Contando as linha de um arquivo')
-f = open('Cap06/arquivos/salarios.csv', 'r')
-data = f.read()
-rows = data.split('\n')
-full_data = []
-for row in rows:
-    split_row = row.split(',')
-    full_data.append(split_row)
-count = 0
-for row in full_data:
-    count += 1
-print(f'O arquivo "salarios.csv" tem {count} linhas')
-
-titulo('Contando o número de colunas de um arquivo')
-f = open('Cap06/arquivos/salarios.csv', 'r')
-data = f.read()
-rows = data.split('\n')
-full_data = []
-for row in rows:
-    split_row = row.split(',')
-    full_data.append(split_row)
-    first_row = full_data[0]
-count1 = 0
-for calumn in first_row:
-    count1 += 1
-print(count1)
