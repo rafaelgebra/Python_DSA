@@ -1,6 +1,8 @@
 from platform import python_version
 from time import sleep 
 import pandas as pd
+import os
+import csv
 
 def titulo(msg):
     print()
@@ -417,3 +419,22 @@ arquivo5 = open('Cap06/arquivos/cientista.txt', 'r')# Agora novamente é feita a
 conteudo = arquivo5.read()# Para para uma variável o 'conteúdo desse arquivo' com o metudo read()
 arquivo5.close()# Novamente é usando o metodo close() para fechar o arquivo para não ocorrer erros/bugs/corromper os dados
 print(conteudo)
+
+titulo('Manipulando Arquivos TXT em Python com a Expressão with')
+lento('Nessa expressão o método close() é fechado automaticamente, então com esse metodo pode abrir tanto read(), write(), e outras')
+with open('Cap06/arquivos/cientista.txt', 'r') as arquivo6:#Nessa sintaxe é colocado o "with = com" é colocado no começo da expressão, após isso é colocado o método open('o local, o nome do arquivo e o tipo'), após isso é colocado "as = como" que é para por o nome/apelido"carinhoso" do arquivo para ser usado em python - nesse exemplo o nome do arquido é arquivo6.
+    conteudo = arquivo6.read()# Essa linha de comando é execurada após o execusão de cima (aqui pode ser feita qualquer coisa)
+print(len(conteudo))#com o método len() consegui ter a informação do comprimento do conteúdo
+print(conteudo)
+
+titulo('Segundo Exemplo')
+
+with open('Cap06/arquivos/cientista.txt', 'w') as arquivo7:
+    arquivo7.write(texto[:19])#Isso é analize se dados, vai ser pego os 19 caracters iniciais
+    arquivo7.write('\n')#Vai dar um Enter
+    arquivo7.write(texto[28:66])#Agora pega os caracters do 28 até o 65 - o 66 fica de fora.
+
+arquivo7 = open('Cap06/arquivos/cientista.txt', 'r')#Faz novamente a apertura do arquivo mas como leitura do  'r'
+conteudo1 = arquivo7.read()#Grava em uma variável usando o método leitura read()
+arquivo7.close()#fecha o arquivo com cloase()
+print(conteudo1)# imprime o conteúdo da variável 
