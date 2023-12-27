@@ -398,3 +398,22 @@ arquivo3 = 'Cap06/arquivos/salarios.csv'
 df = pd.read_csv(arquivo3) #df = dataframe
 print(df.head())
 print(df['Position Title'].value_counts())
+
+titulo('Manipulação de arquivos - Parte 2. Formados TXT, CSV, JSON')
+lento('TXT é a externsão de arquivos para arquivos de texto puro. Um arquivo TXT é uma arquivo de texto simples sem formação, com negrito, itálico ou fontes diferentes. Eles pode ser aberto e editado com muitos aplicativos diferentes, incluindo editores de texto, processandores de texto e IDEs. Arquivos TXT são amplamentes utilizados para armazenar dados de texto simples, como listas, notas e documentos de texto. Eles são universais e podem ser lidos em praticamente qualquer dispositivo ou sistemas operacional.')
+
+texto = 'Ciêntista de Dados pode ser uma excelente alternativa de carreira. \n'
+texto += 'Esses profissionais precisam saber como programar em Python. \n'
+texto += 'E, Claro, devem ser proficientes sem Data Science'
+print(lento(texto))
+
+lento('O módulo "os" permite interagir com o sistema operacioal de forma mais façil')
+arquivo5 = open(os.path.join('Cap06/arquivos/cientista.txt'), 'w')
+print(lento('Lembrete. "open" é abrir do pacote python.\nDo pacote "os" vai chamado o pacote "path" que é caminho e "join" que pe juntar.\nIsso tudo é para abrir o arquivo para gravação "Cap06/arquivos/cientista.txt"'))
+for palavra in texto.split():#Esta sendo criado um loop para percorrer o a variável, o split() sem nada dentro dos parenteses, significa que é para fazer a divição no espaço entre as palavras
+    arquivo5.write(palavra + ' ')#Posso usar a escrever em cima da mesma variável de antes usando metodo write() colocando como parametro o resulta do for + ' ' para separar as letras. No for retirou todos os espeços "limpando". Agora dentro da arquitetura do for estamos separando as palavras por espaço e deixando tudo na mesma linha.   
+arquivo5.close() # o metodo close() é usado para feixar a edisão do arquivo.
+arquivo5 = open('Cap06/arquivos/cientista.txt', 'r')# Agora novamente é feita a abertura do arquivo agora no modo read que é a leitura.
+conteudo = arquivo5.read()# Para para uma variável o 'conteúdo desse arquivo' com o metudo read()
+arquivo5.close()# Novamente é usando o metodo close() para fechar o arquivo para não ocorrer erros/bugs/corromper os dados
+print(conteudo)
