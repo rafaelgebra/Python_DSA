@@ -1,5 +1,6 @@
 from platform import python_version
-from time import sleep 
+from time import sleep
+from urllib import response 
 import pandas as pd
 import os
 import csv
@@ -16,7 +17,7 @@ def titulo(msg):
 def lento(msg):# Lento para frase em str
     for letra in msg:
         print(letra, end='', flush=True)
-        sleep(0.004)
+        sleep(0.001)
     print('\n')
 
 versao = python_version()
@@ -485,7 +486,7 @@ print()
 print(dados)
 print(dados['nome'])
 
-titulo('Estraçã de arquivo da WEB')
+titulo('Estraçã de arquivo da WEB')# imprimindo dados diretamente da WEB
 
 response = urlopen('http://vimeo.com/api/v2/video/57733101.json').read().decode('utf8')
 dados = json.loads(response)[0]
@@ -495,3 +496,48 @@ print('titulo: ', dados['title'] )
 print('URL: ', dados['url'])
 print('Duração: ', dados['duration'],'min')
 print('Número de Visualizações: ', dados['stats_number_of_plays'])
+print('\n')
+lento('Segundo exemplo de extração de dados da WEB')
+
+respons = urlopen('https://compras.dados.gov.br/licitacoes/doc/licitacao/02000105001802012.json').read().decode('utf8')
+dados = json.loads(respons)
+print(dados)
+print('modalidade: ', dados['modalidade'])
+print('situacao_aviso: ', dados['situacao_aviso'])
+sleep(5)# É o tempo para verificar se o código/resultado deu certo
+
+#Exemplo de extração de dados
+
+arquivo_fonte = 'Cap06/arquivos/pro.json'
+arquivo_destino = 'Cap06/arquivos/dados1.txt'
+with open(arquivo_fonte, 'r') as infile:
+    text = infile.read()
+    with open(arquivo_destino, 'w') as outfiles:
+        outfiles.write(text)
+with open('Cap06/arquivos/dados1.txt', 'r') as arquivo1:
+    texto = arquivo1.read()
+    dados = json.loads(texto)
+print('\nDados impresso da planilha dados1.txt')
+print('modalidade: ', dados['modalidade'])
+print('situacao_aviso: ', dados['situacao_aviso'])
+
+titulo('Copiando conteúdo de um arquivo para outro.')
+
+arquivo_fonte = 'Cap06/arquivos/dados.json'
+arquivo_destino = 'Cap06/arquivos/dados.txt'
+with open(arquivo_fonte, 'r') as infile:
+    text = infile.read()
+    with open(arquivo_destino, 'w') as outfile:
+        outfile.write(text)
+with open('Cap06/arquivos/dados.txt', 'r') as arquivo11:#Essas linhas de código é para a leitura e impressão dos dados
+    texto = arquivo11.read()
+    dados = json.loads(texto)
+print(f'Esses dados é impresso com a estrutura dos código convencional.\n{dados}\n')
+
+open(arquivo_destino, 'w').write(open(arquivo_fonte, 'r').read())
+with open('Cap06/arquivos/dados.txt', 'r') as arquivo12:#Essas linhas de código é para a leitura e impressão dos dados
+    texto = arquivo12.read()
+    dados = json.loads(texto)
+print(f'Esses dados são impresso com os código simplificado . O resultado é:\n{dados}\n')
+
+titulo('Pacotes e Módulos em Puthon - Parte 1/2')
