@@ -541,3 +541,4 @@ with open('Cap06/arquivos/dados.txt', 'r') as arquivo12:#Essas linhas de código
 print(f'Esses dados são impresso com os código simplificado . O resultado é:\n{dados}\n')
 
 titulo('Pacotes e Módulos em Puthon - Parte 1/2')
+
