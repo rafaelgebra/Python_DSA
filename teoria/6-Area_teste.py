@@ -7,6 +7,10 @@ import csv
 import json
 from urllib.request import urlopen
 import numpy
+import random
+import statistics
+import urllib.request
+
 
 def titulo(msg):
     print()
@@ -22,13 +26,26 @@ def lento(msg):# Lento para frase em str
     print('\n')
 
 
-
-lento('Em Python, um módulo é um arquivo (script) que contém códico Python e pode ser importado em outros arquivos Python. Ele é usado para compartilhar funções, classes e variáveis entre arquivos.\nJá um pacote é uma coleção de módulos organizados em uma estrutura de diretórios. Ele permite a divisão de um aplicativo em múltiplos modulos, o que facilita a manutenção e o desenvolvimento.\nVisite o PyPi, repositório de pacotes da linguagem Python: https://pypi.org/')
-
-dados = (dir(numpy))
-lento('Agora será impresso todos os métodos e atributos do pacote numpy.\nAlguns são modulos outros não, depende da organização do pacote')
-for valor in dados:
-    print(valor)
+lento('Um outro pacote muito usado é o pacote RANDOM.\nCom ele consegue fazer a randomização de números e string.\n Segue exemplos abaixo.')
+random_str = random.choice(['Abacaxi','Banana', 'Laranja'])# Choice, é escolher em Ingles.
+print(f'Usando o pacote random com a função choice, consegui de forma "aleatória" o resuldato de uma lista {random_str}')
 print()
-print(f'O resultado da raiz quadrade de 25 é: {numpy.sqrt(25)}')
+random_num = random.sample(range(100),10)# Sample, é amostra em Ingles.
+print(f'Usando o pacote random com a função sample, consegui de forma "aleatória" o resultado de uma lista{random_num}')
 print()
+lento('Um outro exmplo de pacote é: statistics')
+dados = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
+print(statistics.mean(dados)) #É um método de calcula a média
+print(statistics.median(dados)) # É um método que calcula a mediana
+
+lento('Com o pacote os(sistema operacional) pode trazer o local aonde o programa ta sendo executado.\nExemplo a baixo.')
+local_os = os.getcwd()
+print(local_os)
+print()
+
+lento('Podemos trabalhar com módulos dos pacotes(quando disponível).\nSegue exemplo:')
+lento('Com o pacote import urllib.resquet. Onde urllib é o pacote e request é o módulo (import urllib.request).\nEntão junto com o pacote e o modulo pode ser chamado depois a função urlopen()')
+resposta = urllib.request.urlopen('http://python.org')
+print(f'{resposta}\nEssas informações é um objeto do tipo http, expecificamente http da parte do cliente. Com essa informação podemos fazer a  extração do código HTML.\nPara fazer isso é só ler com read() a variável e imprimir com print().html = resposta.read()\nprint(html)')
+html = resposta.read()
+#print(html)

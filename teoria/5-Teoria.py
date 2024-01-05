@@ -5,6 +5,7 @@ import pandas as pd
 import os
 import csv
 import json
+import numpy
 from urllib.request import urlopen
 
 def titulo(msg):
@@ -540,5 +541,15 @@ with open('Cap06/arquivos/dados.txt', 'r') as arquivo12:#Essas linhas de código
     dados = json.loads(texto)
 print(f'Esses dados são impresso com os código simplificado . O resultado é:\n{dados}\n')
 
-titulo('Pacotes e Módulos em Puthon - Parte 1/2')
+titulo('Pacotes e Módulos em Puthon')
 
+lento('Em Python, um módulo é um arquivo (script) que contém códico Python e pode ser importado em outros arquivos Python. Ele é usado para compartilhar funções, classes e variáveis entre arquivos.\nJá um pacote é uma coleção de módulos organizados em uma estrutura de diretórios. Ele permite a divisão de um aplicativo em múltiplos modulos, o que facilita a manutenção e o desenvolvimento.\nVisite o PyPi, repositório de pacotes da linguagem Python: https://pypi.org/')
+
+dados = (dir(numpy))
+lento('Agora será impresso todos os métodos e atributos do pacote numpy.\nAlguns são modulos outros não, depende da organização do pacote')
+for valor in dados:
+    print(valor)
+print()
+print(f'O resultado da raiz quadrade de 25 é: {numpy.sqrt(25)}')
+print()
+print(dir(numpy))# Esse comando imprime na tela todo o conteudo do pacote, todos os métodos e atributos.
