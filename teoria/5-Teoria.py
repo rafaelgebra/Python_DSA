@@ -581,3 +581,64 @@ resposta = urllib.request.urlopen('http://python.org')
 print(f'{resposta}\nEssas informações é um objeto do tipo http, expecificamente http da parte do cliente. Com essa informação podemos fazer a  extração do código HTML.\nPara fazer isso é só ler com read() a variável e imprimir com print().html = resposta.read()\nprint(html)')
 html = resposta.read()
 #print(html)
+
+titulo('Exemplo de função = função built-in python')
+print('Função MAP')
+lento('A função map() em Python é uma função que aplica uma determinada função a cada elemento de uma estrutura de dados iterável (como uma lista, tupla ou outro objeto iterável). A função map() retorna um objeto que pode ser convertido em outra estrutura de dados, como uma lista, se necessário.')
+
+numeros = [1, 2, 3, 4, 5]
+def potencia(x):
+    return x ** 2
+
+numeros_ao_quadrado = list(map(potencia, numeros))
+print(numeros_ao_quadrado)
+
+titulo('Exemplo 2 - Como usar a função map()')
+
+# Função 1 - Recebe uma temperatura como parâmetro e retorna a temperatura em Fahrenheit.
+# Função 2 - Recebe uma temperatura como parâmetro e retorna a temperatura em Celsius.
+
+# Função 1.
+def fahrenheit(t):
+    return ((float(9)/5) * t + 32)
+
+def celsius(t):
+    return (float(5)/9) * (t-32)
+
+temperaturas = [0, 22.5, 40, 100]
+
+lento(f'Quando se manda imprimir o conteúdo da função map() sem converter para uma lista, tupla e assim por diante ela traz ({(map(fahrenheit, temperaturas))}) esse tipo de informação')
+lento(f'Para que sejá possivel manipular esse objeto bastra converte-lo.\n{list((map(fahrenheit, temperaturas)))} ')
+
+
+lento(f'Quando se manda imprimir o conteúdo da função map() sem converter para uma lista, tupla e assim por diante ela traz ({(map(celsius, temperaturas))}) esse tipo de informação')
+lento(f'Para que sejá possivel manipular esse objeto bastra converte-lo.\n{list((map(celsius, temperaturas)))} ')
+
+lento('Importante:\nEm Python 3, a função map() retorna um interator (retornaum objeto pelo qual podemos navegar)')
+
+lento('Para deixar "bonito" ou criar uma iteração pode ser feito pelo loop for. Conforme o exemplo abaixo')
+print('Usando o for para ter iteração. temperatura em fahrenheit')
+for temp in map(fahrenheit, temperaturas):
+    print(temp)
+print('Usando o for para ter iteração. temperatura em celsius')
+for temp in map(celsius, temperaturas):
+    print(f'{temp:.2f}') # Foi usado formatação para reduzir a quantidade de casa decimais
+
+lento('Agora sejá usado a função lambda para fazer a mesma coisa.')
+titulo('Temperatura em CeLsius: ')
+map(lambda t: (5.0/9)* (t - 32), temperaturas)
+print(list(map(lambda t: ((float(9)/5) * t + 32), temperaturas)))
+titulo('Temperatura em fahrenheit: ')
+map(lambda t: (float(5)/9) * (t-32), temperaturas)
+#print(list(map(lambda t: (float(5)/9) * (t-32), temperaturas))) # Primeira opção, sem formatação de casas decimais.
+lista =list(map(lambda t: (float(5)/9) * (t-32), temperaturas)) # Só para mostrar com formatação de duas casas decimais
+for temp in lista:
+    print(f'{temp:.2f}')
+print()
+
+titulo('Exemplo de soma de listas')
+lento('Aqui esta fazendo uma soma entre os valores da lista a e lista b.')
+a = [1, 2, 3, 4]
+b = [5, 6, 7, 8]
+print(list(map(lambda x, y: x + y, a, b)))
+print(list(map(lambda x, y: x + y, a, b)))

@@ -1,3 +1,4 @@
+from difflib import restore
 from platform import python_version
 from time import sleep
 from urllib import response
