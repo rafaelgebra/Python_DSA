@@ -11,6 +11,7 @@ import numpy
 import random
 import statistics
 import urllib.request
+from functools import reduce
 
 
 def titulo(msg):

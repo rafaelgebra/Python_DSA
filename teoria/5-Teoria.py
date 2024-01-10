@@ -10,6 +10,7 @@ import numpy
 import random
 import statistics
 import urllib.request
+from functools import reduce
 
 def titulo(msg):
     print()
@@ -550,8 +551,9 @@ lento('Em Python, um módulo é um arquivo (script) que contém códico Python e
 
 dados = (dir(numpy))
 lento('Agora será impresso todos os métodos e atributos do pacote numpy.\nAlguns são modulos outros não, depende da organização do pacote')
-for valor in dados:
-    print(valor)
+#for valor in dados:
+    #print(valor)
+    
 print()
 print(f'O resultado da raiz quadrade de 25 é: {numpy.sqrt(25)}')
 print()
@@ -581,6 +583,8 @@ resposta = urllib.request.urlopen('http://python.org')
 print(f'{resposta}\nEssas informações é um objeto do tipo http, expecificamente http da parte do cliente. Com essa informação podemos fazer a  extração do código HTML.\nPara fazer isso é só ler com read() a variável e imprimir com print().html = resposta.read()\nprint(html)')
 html = resposta.read()
 #print(html)
+
+#Capitulo 6 funções Built-in em Python
 
 titulo('Exemplo de função = função built-in python')
 print('Função MAP')
@@ -642,3 +646,23 @@ a = [1, 2, 3, 4]
 b = [5, 6, 7, 8]
 print(list(map(lambda x, y: x + y, a, b)))
 print(list(map(lambda x, y: x + y, a, b)))
+
+titulo('Função reduce()')
+
+lento('A função reduce() em Python é uma função da biblioteca que aplica uma determinada função binária a pares consecutivos de elementos em uma estrutura de dados iterável (como uma lista, tula ou outro objeto iterável), reduzindo-a um único valor.')
+
+lista = [47, 11, 42, 13]
+def soma3(a, b):
+    x = a + b
+    return x
+lento('Com a função reducce () consegui facilmente reduzir o tamanho do código.\nNa vez de fazer um código que tenha que "somar" cada número de uma lista, pode ser usado a função reduce() e diminuir o tamanho do código')
+print(reduce(soma3, lista))
+print()
+lento('Também da para fazer o mesmo dentro da expressão lambda.\nNão é nescessario criar uma função para cada tarefa, se esse for o caso pode se usar a expressão lambda onte')
+print(reduce(lambda x, y: x + y, lista))
+lento('Com essa proxima expressão conseguimos encontrar o maior valor e o menor valor')
+max_find2 = lambda a,b: a if (a > b) else b
+min_find2 = lambda a,b: a if (a < b) else b
+
+print(f'Aqui temos o maior valor usando a expressão lambda: {reduce(max_find2, lista)} da seguinte lista {lista}')
+print(f'Aqui temos o menor valor usando a expressão lambda: {reduce(min_find2, lista)} da seguinte lista {lista}')
