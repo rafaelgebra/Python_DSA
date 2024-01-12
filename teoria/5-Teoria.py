@@ -666,3 +666,28 @@ min_find2 = lambda a,b: a if (a < b) else b
 
 print(f'Aqui temos o maior valor usando a expressão lambda: {reduce(max_find2, lista)} da seguinte lista {lista}')
 print(f'Aqui temos o menor valor usando a expressão lambda: {reduce(min_find2, lista)} da seguinte lista {lista}')
+
+# Usando a Função filter()
+titulo('Usando a Função built-in - filter()')
+lento('A função filter() em Python é uma função que filtra elementos de uma estrutura de dados iterável (como listas, tuplas ou outro objeto iterável) com base em uma determinada condição. a função filter() retorna um objeto filtro que pode ser convertido em outra estrutura de dados, como lista, se necessário.')
+
+def verifica_par(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+print(f'O número 35 é par? {verifica_par(35)}')
+print(f'O número 10 é par? {verifica_par(10)}')
+print()
+lista4 = [0, 1, 2, 3, 4, 5, 6 ,7 , 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+print(f'retornou um objeto iterável{filter(verifica_par, lista4)}')# retornou um objeto iterável
+print(list(filter(verifica_par, lista4)))# converterdo para uma lista conseguimos visualizar o resultado.
+print()
+lento('Agora podemos fazer de forma mais "simples" usando a função lambda, dessa forma não precisa criar uma função.')
+print(f'Esso é o retorno de um objeto iterável. {filter(lambda x: x % 2 == 0, lista4)}')
+print(f'Converterdo para uma lista, conseguimos visualizar o resultado.{list(filter(lambda x : x % 2 == 0, lista4))}')
+print()
+lento('Também podemos imprimeir de determinado valor, desde que o código esteja correto.')
+print(f'Novamente objeto iterával: {filter(lambda x : x % 2 == 0 and x > 8, lista4)}')
+print(f'Novamente valor do objeto: {list(filter(lambda x : x % 2 == 0 and x > 8, lista4))}')
+print()
