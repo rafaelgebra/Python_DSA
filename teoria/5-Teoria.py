@@ -245,6 +245,7 @@ print('Exemplo de Função "COMUM" em python')
 def potencia(num):
     resultado = num ** 2
     return resultado
+potencia(5)
 print('Esse é o resultado da função ', potencia(5),'\n')
 
 print('Essa proxima função é feita de forma resulmida')
@@ -591,10 +592,10 @@ print('Função MAP')
 lento('A função map() em Python é uma função que aplica uma determinada função a cada elemento de uma estrutura de dados iterável (como uma lista, tupla ou outro objeto iterável). A função map() retorna um objeto que pode ser convertido em outra estrutura de dados, como uma lista, se necessário.')
 
 numeros = [1, 2, 3, 4, 5]
-def potencia(x):
+def potencia1(x):
     return x ** 2
 
-numeros_ao_quadrado = list(map(potencia, numeros))
+numeros_ao_quadrado = list(map(potencia1, numeros))
 print(numeros_ao_quadrado)
 
 titulo('Exemplo 2 - Como usar a função map()')
@@ -691,3 +692,86 @@ lento('Também podemos imprimeir de determinado valor, desde que o código estej
 print(f'Novamente objeto iterával: {filter(lambda x : x % 2 == 0 and x > 8, lista4)}')
 print(f'Novamente valor do objeto: {list(filter(lambda x : x % 2 == 0 and x > 8, lista4))}')
 print()
+
+
+#Função zip()
+titulo('Usando função zip()')
+lento('A função zip() em Python é uma função que agrupa elementos de múltiplas estruturas de dados iteráveis (como lista, tuplas ou outros objetos iteráveis) juntos em pares. A função zip() retorna um objeto zip, que pode ser convertido em outra estrutura de dados, como uma lista ou dicionário, se necessário.')
+
+x = [1, 2, 3]
+y = [4, 5, 6]
+lento(f'Exemplo de como usar a função zip()\nx = [1, 2, 3]\ny = [4, 5, 6] o resultado normalmente é um objeto iterável: {zip(x, y)}')
+lento(f'Mas convertendo para uma lista, podemos ter o resultado: {list(zip(x, y))}')
+print()
+titulo('Para unir as estruturas podemos usar a função zip() mas tem suas limitações.\n os valores/"conteúdo" tem que ter a mesma quantidade.')
+print('Ex:')
+print(list(zip('ABCD', 'YX')))
+lento('A lista original código original é list(zip("ABCD","YX")), como uma das listas é menor a função zip() só consegui ir até aonde tem informação.')
+lento('Isso também acontece com números ou qualquer outros "dados/valores/conteúdo".\n Ex')
+a = [1, 2, 3]
+b = [4, 5, 6, 7, 8]
+lento('As listas originais são:\na = [1, 2, 3]\nb = [4, 5, 6, 7, 8]')
+print(list(zip(a, b)))
+lento('Os valores da nova lista não estão completos porque falta dados')
+titulo('O mesmo acontece com qualquer objeto iterável feito pela função zip(), por exemplo dicionarios em Python')
+d1 = {'a':1, 'b':2}
+d2 = {'c':3, 'd':4}
+print(list(zip(d1, d2)))
+lento('Por padrão a função zip "combina" as chaves dos valores.\nPara alterar isso para os valores tem que chamar o método values de pelos menos de um dos funcionarios.\n Ex:\nprint(list(zip(d1, d2.values())))')
+print(list(zip(d1, d2.values())))
+titulo('Também da para fazer a mesma coisa usando um loop')
+def trova_valores(d1, d2):
+    dict_temporario = {}
+    for d1key, d2values in zip(d1, d2.values()):
+        dict_temporario[d1key] = d2values
+    return dict_temporario
+print(trova_valores(d1, d2))
+
+#Enumerete
+titulo('Capítulo 6 - Funão enumerete()')
+lento('A função enumerete() em Python é uma função que permite iterar sobre uma estrutura de dados (como uma lista, tupla ou outro objeto iterável). A função enumerate() retorna um objeto enumerado, que pode ser usado em loops para percorrer a estrutura de dados e acessar o contador e o valor de cada elemento.')
+lento('Abaixo está a "sequencia" lista de caracter desse exemplo.')
+seq = ['a', 'b', 'c']
+lento('Como é um objeto itereitor (O Iteraror é um padrão de projeto comportamental que permite a passagem sequencial através de uma estrutura de dados complexa sem expor seus detalhes internos.)')
+print(enumerate(seq))
+lento('Para conseguir visualidar o conteúdo do iterator é só converter para uma lista.')
+print(list(enumerate(seq)))
+lento('Nesse exemplo a cima, foi realisada a numeração com indice e valor')
+titulo('Exemplo 2')
+for indice, valor in enumerate(seq):
+    print(indice, valor)
+print('Nesse exenplo mostra o indice com o seu valor.\nEm python toda lista tem o indice e o seu valor, com a função enumerete() consegui visualizar os dois.')
+seq2 = ['a', 'b', 'c', 'd', 'e']
+for indice, valor in enumerate(seq2):
+    if indice > 3 :
+        break
+    else:
+        print(valor, end=' ')
+print()
+print(f'A lista completa é {seq2}')
+titulo('Exemplo 3')
+lista = ['Marketing', 'Tecnologia', 'Business']
+for i, item in enumerate(lista):
+    print(f'No indice {i}, esse é o item/valor do indice {item}')
+titulo('Exemplo 4 (str)')
+lento('No próximo exemple sera usado uma string, separando cada letra em um indice.')
+lento('Primeiro exemplo é atribuido uma lista uma frase que (conjunto de caracter).\n Nesse exemplo não é separado por letra porquê a frase esta em uma lista')
+teste = ['Data Science Academy']
+for i, item in enumerate(teste):
+    print(i, item)
+lento('Nesse exemplo já podemos vamor usar uma array invez de uma lista')
+teste1 = 'Data Science Academy'
+for i, item in enumerate(teste1):
+    print(i, item)
+lento('Nesse exemplo vamos ver a frase direto/dentro na função enumerate() sem a variável.')
+for i, item in enumerate('Data Science Academy'):
+    print(i, item)
+print()
+titulo('exemplo 4')
+lento('Também da para usar o enumerete() um range()')
+for i, valor in enumerate(range(5, 10)):
+    print(f'indice {i}, valor {valor}')
+print()
+lento('Também pode fazer passando sómente o valor final do range()')
+for i, valor in enumerate(range(5)):
+    print(f'indice {i}, valor{valor}')
