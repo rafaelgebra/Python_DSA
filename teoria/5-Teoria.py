@@ -14,15 +14,13 @@ from functools import reduce
 
 def titulo(msg):
     print()
-    print(f'--- {msg} ---', flush=True)
-    #sleep(0.3)
+    print(f'--- {msg.upper()} ---')
     print()
 
-
-def lento(msg):# Lento para frase em str
+def lento(msg, t=0.003):# Lento para frase em str
     for letra in msg:
         print(letra, end='', flush=True)
-        sleep(0.001)
+        sleep(t)
     print('\n')
 
 versao = python_version()
@@ -775,3 +773,104 @@ print()
 lento('Também pode fazer passando sómente o valor final do range()')
 for i, valor in enumerate(range(5)):
     print(f'indice {i}, valor{valor}')
+
+titulo('Erros fazem partes do dia-dia!!!!')
+
+titulo('Erros e Exceções')
+lento('Sempre leia as mensagens de erro. Erros fazem parte do processo de aprendizagem e vão na sua jornada em programação, em qualquer linguagem.')
+
+lento('Para usar o tratamento de erro em Python, usamos as palavras reservadas = Try, Except, Finally')
+
+titulo('Exemplo 1')
+try:
+    total = 8 + '2'
+except TypeError:
+    print('Operação não permitida. ERRO DE TYPO')
+
+titulo('Exemplo 2: gravando conteúdo em arquivo')
+try:
+    f = open('Cap06/arquivos/testandoerros.txt', 'w')# Caso o o caminho esteja errado, vai ser acionado o "except".
+    f.write('Gravando no arquivo')
+except IOError:
+    print('Erro: arquivo não encontrado ou não pode ser salvo.')
+else:
+    print('Conteúdo gravado com sucesso')
+    f.close()
+
+
+titulo('Exemplo 3: Tentando abrir arquivo, porém o "endereço/extenção" esta errado')
+try:
+    f = open('Cap06/arquivos/testandoerros', 'r')
+except IOError:
+    print('Erro: arquivo não encontrado ou não pode ser lido.')
+else:
+    print('Leitura feita com sucesso!')
+    f.close()
+
+titulo('Exemplo 4: usando o operador finally')
+
+lento('Exemplo COM erro', 0.2)
+try:
+    f = open('Cap06/arquivos/testandoerros.txt', 'w')
+    f.write('Gravando no arquivo. Teste 2')
+except IOError:
+    print('ERRO: arquivo não encontrado ou não pode ser salvo')
+else:
+    print('Conteúdo gravado com sucesso')
+    f.close()
+finally:
+    print('Comando no bloco finally são sempre executados, independente do resultado.')
+
+print()
+lento('Exemplo SEM erro', 0.2)
+try:
+    f = open('Cap06/arquivos/testandoerros.txt', 'w')
+    f.write('Gravando no arquivo')
+except IOError:
+    print('ERRO: arquivo não encontrado ou não pode ser salvo')
+else:
+    print('Conteúdo gravado com sucesso')
+    f.close()
+finally:
+    print('Comandos no bloco finally são sempre executados!')
+print()
+
+titulo('Exemplo 6:')
+lento('Tentando resolver com tratamento de erro tentativo 1', 0.03)
+def askint():
+    try:
+        val = int(input('Digite um número: '))
+    except:
+        print('Você não digitou um número')
+    finally:
+        print('Obrigado')
+askint()
+
+titulo('Exemplo 7:')
+lento('Tentando resolver com tratamento de erro tentativo 2', 0.03)
+def askint2():
+    try:
+        val = float(input('Digite um número: '))
+    except:
+        print('Você não digitou um número!')
+        val = float(input('Tente novamente. Digite um número: '))
+    finally:
+        print('Obrigado')
+askint2()
+
+titulo('Exemplo 8:')
+lento('Tentando resolver com tratamento de erro tentativo 3', 0.03)
+def askint3():
+    while True:
+        try:
+            val = float(input('Digite um número: '))
+        except:
+            print('Você não digitou um número!')
+            continue
+        else:
+            print('Obrigado por digitar um número.')
+            break
+        finally:
+                print(f'O valor digitado foi {val}')
+                print('Fim da execução')
+askint3()        
