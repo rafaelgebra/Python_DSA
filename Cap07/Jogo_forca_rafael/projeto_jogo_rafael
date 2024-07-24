@@ -1,0 +1,21 @@
+# Projeto 1 - Desenvolvimento de Game em Linguagem Python - Versão 1
+
+# Import
+import random
+from os import system, name 
+
+# Função para limpar a tela a cada execução
+def limpar():
+#Aqui em baixo tem um bloco condicional para saber qual o sistem operacional que o jogo vai "rodar".
+
+    # A primeira coisa que vai fazer é limpar a tela.
+    # Windows.
+    if nome == 'nt': # "nt" é o nome interno dado para o sistema "Windows". 
+        _ = system("cls") # Se o sistema operacional for windows, com o comando "cls" é feito a limpesa da tela.
+        
+        # O underline é a variavél de retorno da função system, porém não "quero" que tenha algum retorno, então é jogado para essa variavél sem uso.
+
+    # Mac ou Linux.
+    else: # Se o sistema operacional for Mac ou Linux o comando para limpar a tela é "clear".
+        _ = system ("clear") # Se o sistema operacional dor Mac ou Linux, com o comando "clear" é feito a limpesa da tela.
+        # O underline é a variavél de retorno da função system, porém não "quero" que tenha algum retorno, então é jogado para essa variavél sem uso.
