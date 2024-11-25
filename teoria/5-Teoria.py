@@ -1,3 +1,4 @@
+
 from platform import python_version
 from time import sleep
 from urllib import response
@@ -874,3 +875,139 @@ def askint3():
                 print(f'O valor digitado foi {val}')
                 print('Fim da execução')
 askint3()        
+
+
+# Cap08 - Classes
+
+Em Programanção Orientada a Objetos (POO), uma classe é uma estrutura que descreve um objeto, especificando os atributos e compostamentos que os objetos deve ter. Uma classe é uma espécie de modelo que define as características e ações que uma objetos deve possuir.
+
+As classes são usadas para criar objetos, que são instâncias da classes. Cada objeto criado a partir da mesma classe terá os mesmos atributos e comportamentos.
+
+Para criar uma classe em Python, utiliza-se a palabra revervada 'class'.
+
+
+O nome da classe segue a mesma convenção de nomes para criação de funções e variáveis em Python, mas normalmente se usa a primeira letra maiúscula em cada paralavra no nome de classe
+"""
+
+""""
+# Criando um classe chamada Livro
+class Livro():
+    
+    # Este método vai inicializar cada objeto criado a partir desta classe
+    # O nome deste método é __init__ # metodo construtor
+    # (self) é uma referência a cada atrituto da própria classe (e não de uma classe mãi, por exempço)
+    def __init__(self):
+
+        #Atributo dão propriedades
+        self.titulo = "Sapiens - Uma breve História da Humanidade"
+        self.isbn = 9988888
+        print("Construtor chamado para criar um objeto desta classe")
+
+    # Métodos dão funções que executam ações nos objetos da classe
+    def imprime(self):
+        print(f"Foi criado o livro {self.titulo} com ISBN {self.isbn}\n")
+
+"""'Em python, a palavra reservada self é uma referência ao objeto atual da classe. quando um objeto é incrivel a partir de uma classe, self é ultilizado para se referir a esse objeto específico.'"""
+
+Livro1 = Livro()
+print(Livro1,"\n")
+print(type(Livro1),"\n")
+print((Livro1.titulo),"\n")
+print(Livro1.isbn, "\n")
+Livro1.imprime()
+
+
+
+# Criando a classe Livro com parâmetros no método construtor.
+class Livro():
+    def __init__ (self, titulo, isbn):
+        self.titulo = titulo
+        self.isbn = isbn
+        print("Construtor chamado para criar um objeto desta classe.")
+
+    def imprimr(self, titulo, isbn):
+        print(f"Este é o livro { titulo} é o ISBN {isbn}\n")
+
+Livro2 = Livro("O poder do Hábito", 77886611)
+print(Livro2.titulo, "\n")
+Livro2.imprimr("O poder do Hábito", 77886611)
+
+
+class Algotirmo():
+    def __init__(self, tipo_algo):
+        self.tipo = tipo_algo
+        print("Construtor chamado para criar um objeto desta classe\n")
+print()
+algo1 = Algotirmo(tipo_algo="Random Forest")
+print(algo1.tipo,"\n")
+algo2 = Algotirmo(tipo_algo="Deep Learning")
+print(algo2.tipo,"\n")
+
+"""
+OBJETOS:
+Em Python TUDO é Objeto.
+"""
+# Criando uma lista.
+lst_num = ["Data", "Science", "Academy", "Nota", 10, 10]
+# A lista lst_num é um objeto, uma instância da classe lista em Python
+print(f"O tipo é: {type(lst_num)}")
+print(f"Quantas vezes aparece o elemento 10 na lista, lst_num?\nResponta: {lst_num.count(10)}")
+
+# Usamos o função type, para verificar o tipo de um objeto.
+print(type(10))
+print(type([]))
+print(type(()))
+print(type({}))
+print(type("a"))
+
+
+class Carro(object):
+    pass
+
+ferrari = Carro()
+print(type(ferrari), "\n")
+
+
+class Estudantes:
+    def __init__(self, nome, idade, nota):
+        self.nome = nome
+        self.idade = idade
+        self.nota = nota
+
+#Criando um OBJETO chamado Estudante a partir da classe Estudantes.
+Estudantes1 = Estudantes("Bob", 12, 9.5)
+# Atributo da classe Estudante, ultilizado por cada objeto criado a partir desta classe.
+print(f"O nome do estudante é: {Estudantes1.nome}\n")
+# Atributo da classe Estudante, utilizado por cada objeto criado a partir desta class.
+print(f"A idade do estudante é: {Estudantes1.idade}\n")
+# Atributo da ckasse estudante, utiliza por cada objeto criado a partir desta class.
+print(f"A nota do estudante é: {Estudantes1.nota}\n")
+
+
+# Criando uma classe.
+class Funcioanarios:
+    def __init__ (self, nome, salario, cargo): # O __init__ é chamado Metodo construtor
+        self.nome = nome # Isso é Atributo.
+        self.salario = salario # Isso é um Atributo.
+        self.cargo = cargo # Isso é um Atributo.
+
+    def listFunc(self):
+        print(f"Funcionario(a) {self.nome} tem saláro de R$ {self.salario} e o cargo é {self.cargo}.\n")
+
+# Criando um objeto chamado Func1 a partir da classe Funcionario.
+Func1 = Funcioanarios("Mary", 2000, "Cientista de dados") # Instancia da classe
+# Usando o método e atributos da classe
+Func1.listFunc()
+print("**** Usanado Atributos ****")
+print(f"No objeto Func1 tem o 'atributo haattr' nome?\nResponta: ", end="")
+print(hasattr(Func1, 'nome'))
+print(f"No objeto Func1 tem o 'atributo haattr' salario?\nResponta: ", end="")
+print(hasattr(Func1, 'salario'))
+print(f"Mude o sálario de {Func1.salario}, para R$4.500,00")
+setattr(Func1,"salario", 4500)# troca realizada com setattr()
+print(f"Qual o valor do sálario R$", end="")
+print(getattr(Func1, "salario"))# Retornar "mostrar" com getattr
+delattr(Func1, "salario")
+print(f"Existe o atributo sálario do metodo Funcionarios? ", end="") # Com delattr, foi deletado o atributo salario.
+print(hasattr(Func1, "salario")) # mostra de se o atributo existe/tem.
+Func1.listFunc() # Da erro porque foi Deletado o atributo "salario"
