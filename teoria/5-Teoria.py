@@ -1011,3 +1011,53 @@ delattr(Func1, "salario")
 print(f"Existe o atributo sálario do metodo Funcionarios? ", end="") # Com delattr, foi deletado o atributo salario.
 print(hasattr(Func1, "salario")) # mostra de se o atributo existe/tem.
 Func1.listFunc() # Da erro porque foi Deletado o atributo "salario"
+
+
+
+"""
+Os atributos de uma classe são as caracteristicas/propriedades da classe
+O que faz a diferençã na programação são os métodos
+"""
+
+"""
+TRABALANDO COM MÉTODOS DE CLASSES EM PYTHON
+Em Python, os métodos de classes funções dentro de uma ckasse, que realizam operaçoes especificas em objetos criados a partir dessa classe. Os médodos de classes são usados para implementar o comportamento dos objetos que pertencem a essa classe.
+
+Assim como as funções em Python, os métodos de classes podem rceber argumentos e retornar valores, No entando, diferente das funções normais, os métodos de classes sempre incluem o parâmetro self com o primeiro argumento, que é usado para se referir ao objeto atual de classe.
+
+O método __init__ é um método especial que é chamado quando um objeto é xriado a partir da classe. Este método é usado para inicializar os atributos dos objetos. Outros métodos podem ser definidos para exercutar tarefas específicas em um objeto,como calcular valores, realizar operações de entrada e saída, ou alterar o estado do objeto.
+
+"""
+
+# Criando uma classe chamada Circulo.
+class Circulo():
+    # O valor de pi é contante.
+    pi = 3.14
+    
+    # Qunado um objto desta classe for criado, este método será executado e o valor default do raio se 5.
+    def __init__(self, raio=5):
+        self.raio = raio
+
+    # Esse método calcula a área.
+    def area(self):
+        return(self.raio * self.raio) * Circulo.pi
+    
+    # Método para gerar um novo raio.
+    def setRaio(self, novo_raio):
+        self.raio = novo_raio
+
+    # Método para obter o raio do círculo.
+    def getRaio(self):
+        return self.raio
+    
+# Criando o objeto circ, uma instância da classe Circulo()
+circ = Circulo() # Aqui foi criado o OBJETO circ, sem a inclução de parametros.
+# Executando um método da classe Circulo.
+print(f"O valor do raio é {circ.getRaio()}, então o valor da área é {circ.area()}\n") # O método getRaio é usado para retormar/imprimir o resultado. 
+circ1 = Circulo(7) # Criado um novo OBJETO sendo da classe Circulo, só que dessa vez inviando o parametro.
+# Executando um método da classe Círculo.
+print(f"O novo valor passado como parametro é {circ1.raio}, então o valor da área é {circ1.area()}\n")
+# Passar um novo valor para o atributo raio da classe Circulo.
+circ.setRaio(3)
+# Imprimir um novo valor para o raio.
+print(f"O novo valor passado como parametro para o raio é de {circ.getRaio()}, então o novo valor da área é {circ.area()} \n")
