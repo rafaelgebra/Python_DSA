@@ -1061,3 +1061,152 @@ print(f"O novo valor passado como parametro é {circ1.raio}, então o valor da �
 circ.setRaio(3)
 # Imprimir um novo valor para o raio.
 print(f"O novo valor passado como parametro para o raio é de {circ.getRaio()}, então o novo valor da área é {circ.area()} \n")
+
+
+""" Herança de classes em Python"""
+
+"""
+TRABALANDO COM HERANÇA DE CLASSES EM PYTHON
+
+Em Programação Orientada a Objetos (POO), a herança é um coneito que permite criar novas classes a partir de outra classes existentes, aproveitando os atributos e métodos da classe original e adicionando novos atributos e médosos específicos.
+
+A classe original é chamada de classes mão ou superclasse e a nova classe criada é chamada de classe filha ou subclasse.
+
+A herança é uma técnica importante e POO porque permite reutilizar o código de maneira eficiente. Em vez de criar uma nova classe do zero, a subclasse pode herdar todos os atributos e métodos da superclasse e adicionar apenas o que é necessário. Dessa forma, a subclasse pode ser concentrar em fornecer funcionalidades adicionais sem precisar se preocupar com as características básicas da classe.
+
+Ha nerança, uma subclasse pode herdar os artributos e métodos de superclasse e substituí-los os estendê-los conforme necessário. Por exemplo, uma subclasse pode ter um método com o mesmo nome de uma método da super classe, mas com um comportamemto diferente.
+
+"""
+
+# Criando a classe Animal - Super-Classe.
+class Animal: # NÃO É OBRIGATORIO O USO DE PARENTESES EM CLASSES se não tem parametro.
+    # Iniciando com o Método construtor.
+    def __init__(self):
+        print("Animal Criado.", end=" ")
+    
+    # Criando o método de impressão.
+    def imprimir(self):
+        print("Este é um animal.\n")
+    
+    # Criando o método para informar o hora de comer.
+    def comer(self):
+        print("Hora de comer.\n")
+
+    # Criando método para emitir som, mas ainda não esta configurado. Por isso será passado o pass como parámetro.
+    def emitir_son(self):
+        pass
+
+# Criando duas sub-classes.
+    # A Primeira sub-classe é Cachorro.
+class Cachorro(Animal):
+    # Inicia com o método construtor __init__.
+    def __init__(self): # A sub-classe também necessita do método construtor.
+        Animal.__init__(self) # Além do método construtor da sub-classe atual, também tem que inicializar o método construtor da classe mãe. Isso é feito assim Animal.__init__(self). "Animal" o nome da super classe, chama o método construtor "__init__(self)"
+        print("Objeto Cachorro criado.\n")
+    # O método emitir som, com o print("Au au!") esta na sub-classe de proprosito, porque o som é para cada tipo de animal especifico.
+    def emitir_som(self):
+        print("Au au!\n")
+
+    # A Segunda sub-classe é Cato.
+
+class Gato(Animal):
+    # Iniciando o método construtor com __init__.
+    def __init__(self): # A sub-classe também necessita do método construtor.
+        Animal.__init__(self) # Além do método construtor da sub-classe atual, também tem que inicializar o método construtor da classe mãe. Isso é feito assim Animal.__init__(self). "Animal" o nome da super classe, chama o método construtor "__init__(self)"
+        print("Objeto Gato Criado\n")
+    # O método emitir som, com o print("Miau!") esta na sub-classe de proprosito, porque o som é para cada tipo de animal especifico.
+    def emitir_son(self):
+        print("Miau!\n")
+
+# Criando o OBJETO rex, para trazer as caracteristicas/atributos da sub-classe Cachorro.
+rex = Cachorro() # Criando a Instância da classe
+# Criando o OBJETO zeze, para trazer as caracteristicas/atributos da sub-classe Gato.
+zeze = Gato() # Criando a Instância da classe.
+
+# Chamar o método emitir som, apartir do objeto rex.
+print("O cachorro faz.", end=" ")
+rex.emitir_som() # Se tiver métodos com os mesmos nomes nos métodos mãe e filha. A que fica valendo é a da filha sempre. Porque ele sub-escreve o da super-classe. Isso ajuda muito na forma que quer manipular/estuturar o programa.
+
+# Chamar o método emitir som, apartir do objeto zeze.
+print("O Gato faz.", end=" ")
+zeze.emitir_son()
+# Esse método é chamado para que os Animais comer
+# Executando o método da classe Canhoro(sub-classe) do canhoro.
+print(f"O resultado da impressão do médoto imprimir do médoto Cachorro é. ", end="" )
+rex.comer()
+
+# Executando o método da classe Gato(sub-classe) do canhoro.
+print(f"O resultado da impressão do médoto imprimir do método Gato é. ", end="" )
+zeze.comer()
+
+
+
+
+"""TRABALHANDO COM POLIMORFISMO DE CLASSES EM PYTHON"""
+
+"""
+Polimorfismo é um dos conceitos fundamentais da Programação Orientada a Objeos(POO). O polimorfismo permite que objetos de diferentes classes possam ser tratados de forma uniforme. Isso significa que um objeto pode ser tratado como se fosse um objeto de uma superclasse, mesmo que ela seja de uma sub-classe.
+
+Mais especificamente, o polimorfismo se refere à habilidade de um objeto responder de diferentes formas a uma mesma mensagem. Isso é possível porque as subclasses podem implementar métodos com o mesmo nome que os métodos da superclasse, mas com comportamentos deferentes.
+
+"""
+# Criando Super-classe.
+class Veiculo:
+    # Criando o método construtor com mais 2 parametros/argumentos.
+    def __init__(self, marca, modelo):
+        self.marca = marca # Criação do atributo, marca do veiculo
+        self.modelo = modelo # Criação do atributo, modelo do veiculo.
+
+    def acelerar(self):# Criação do método, sem atributo (podendo ser editado no futuro)
+        pass
+
+    def frear(self):# Criação do método, sem atributo (podendo ser editado no futuro)
+        pass
+
+# Criação das sub-classes
+    # Criação da Primeira sup-classe. Carro
+class Carro(Veiculo): # sub-classe Carro endando as caracteristicas/atributos da super-classe Veiculo.
+    def acelerar(self):
+        print("O carro esta acelerando.")
+
+    def frear(self):
+        print("O carro esta freando")
+
+    # Criação da segunda sup-classe. Moto
+class Moto(Veiculo): # sub-classe Carro endando as caracteristicas/atributos da super-classe Veiculo.
+    def acelerar(self):
+        print("A moto esta acelerando.")
+
+    def frear(self):
+        print("A moto esta freando")
+
+
+    # Criação da Terceira sup-classe. Avião
+class Aviao(Veiculo): # sub-classe Carro endando as caracteristicas/atributos da super-classe Veiculo.
+    def acelerar(self):
+        print("O avião esta acelerando.")
+
+    def frear(self):
+        print("O avião esta freando.")
+
+    def decolar(self):
+        print("O avião esta decolando.")
+
+
+# Criando os objetos, nesse exemplo é uma lista.
+lista_veiculos = [Carro("Porsche", "911 Turbo"), 
+                  Moto("Honda", "CB 1000R Black Edition"), 
+                  Aviao("Boeing", "757")] # Isso é uma lista de instâncias de classes, uma lista de objetos.
+# Criando um loop, para percorrete a lista_veivulos.
+for item in lista_veiculos:
+    # O método acelerar tem comportamento diferente dependendo do tipo de objeto.
+    item.acelerar()
+
+    # O médodo frear tem comportamento diferente dependendo do tipo de objeto.
+    item.frear()
+
+    # Executamos o método decolar somente se o obleto for instância da classe Avião.
+    if isinstance(item, Aviao):# Função interna Python, faz uma comparação para saber se o tipo é igual. A função interna é isinstance()
+        item.decolar()
+
+    print("---")
