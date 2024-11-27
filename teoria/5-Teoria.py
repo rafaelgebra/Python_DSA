@@ -879,7 +879,7 @@ askint3()
 
 # Cap08 - Classes
 
-Em Programanção Orientada a Objetos (POO), uma classe é uma estrutura que descreve um objeto, especificando os atributos e compostamentos que os objetos deve ter. Uma classe é uma espécie de modelo que define as características e ações que uma objetos deve possuir.
+"""Em Programanção Orientada a Objetos (POO), uma classe é uma estrutura que descreve um objeto, especificando os atributos e compostamentos que os objetos deve ter. Uma classe é uma espécie de modelo que define as características e ações que uma objetos deve possuir.
 
 As classes são usadas para criar objetos, que são instâncias da classes. Cada objeto criado a partir da mesma classe terá os mesmos atributos e comportamentos.
 
@@ -887,9 +887,9 @@ Para criar uma classe em Python, utiliza-se a palabra revervada 'class'.
 
 
 O nome da classe segue a mesma convenção de nomes para criação de funções e variáveis em Python, mas normalmente se usa a primeira letra maiúscula em cada paralavra no nome de classe
+
 """
 
-""""
 # Criando um classe chamada Livro
 class Livro():
     
@@ -1165,7 +1165,7 @@ class Veiculo:
 
 # Criação das sub-classes
     # Criação da Primeira sup-classe. Carro
-class Carro(Veiculo): # sub-classe Carro endando as caracteristicas/atributos da super-classe Veiculo.
+class Carro1(Veiculo): # sub-classe Carro endando as caracteristicas/atributos da super-classe Veiculo.
     def acelerar(self):
         print("O carro esta acelerando.")
 
@@ -1194,7 +1194,7 @@ class Aviao(Veiculo): # sub-classe Carro endando as caracteristicas/atributos da
 
 
 # Criando os objetos, nesse exemplo é uma lista.
-lista_veiculos = [Carro("Porsche", "911 Turbo"), 
+lista_veiculos = [Carro1("Porsche", "911 Turbo"), 
                   Moto("Honda", "CB 1000R Black Edition"), 
                   Aviao("Boeing", "757")] # Isso é uma lista de instâncias de classes, uma lista de objetos.
 # Criando um loop, para percorrete a lista_veivulos.

@@ -44,7 +44,7 @@ O   |
  +---+
  |   |
  O   |
-/|\  |
+/|\\  |
      |
      |
 =========''', '''
@@ -52,7 +52,7 @@ O   |
  +---+
  |   |
  O   |
-/|\  |
+/|\\  |
 /    |
      |
 =========''', '''
@@ -60,8 +60,8 @@ O   |
  +---+
  |   |
  O   |
-/|\  |
-/ \  |
+/|\\  |
+/ \\  |
      |
 =========''']
 
@@ -70,7 +70,8 @@ O   |
 class Hangman:
 
 	# Método Construtor
-
+     def __init__(self):
+          pass
 	# Método para adivinhar a letra
 	
 	# Método para verificar se o jogo terminou
