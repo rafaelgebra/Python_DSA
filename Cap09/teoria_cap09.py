@@ -5,6 +5,8 @@
 
 # Importação de pacote
 import numpy as dsa
+import os
+filename = os.path.join('dataset.csv') # Não funciona no VScode, só no Jupyter notebook
 print(f"Versão do software {dsa.__version__}")
 
 # criando um Array numpy a partir de ua lista python
@@ -224,4 +226,56 @@ print(f"Novamente com atributo .ndim, para visualizar a quantidade de dimesões:
 print(f"Visualizando o shape. {arr_4d.shape}.\nO número 2 é o primeiro eixo da dimensão, isso significa que tem 2 grupos.\nDentro de qualquer um desses grupos tem mais 3 grupos de elementros dentro do shape.\nDentro de qualquer um desses 4 grupos tem a linhas no caso tem 4 linhas e é composta de 5 colunas.")
 print("Aplicando uma filtragem do array (arr_4d), usando o fatiamento - arr_4d[0,2,1]")
 print(f"O resultado é a linha com os seguintes dados:[46,47,48,49,50]\nComprovando com o código:{arr_4d[0,2,1]}")
-print(f"Usando a mesma indexação, trazer as infirmações de uma determinada coluna. arr_4d[0,2,1,4]. O resultado é 50. Comprovando com o código: {arr_4d[0,2,1,4]}")
+print(f"Usando a mesma indexação, trazer as infirmações de uma determinada coluna. arr_4d[0,2,1,4]. O resultado é 50. Comprovando com o código: {arr_4d[0,2,1,4]}.\n")
+print("Manipulando arquivos com NumPy.")
+print("1º importar a bíblioteca 'os'.\n2º Criar uma variável recebendo os dados da tabela 'dataset.csv', fica assim = filename - os.path.join('dataset.csv').\nPara carregar esse arquivo tem que levar para uma array do NumPy. Assim: arr13 = ")
+print()
+# Análise Estatistica Básica cm NumPy.
+print(f"Explicando análise estatística básica com NumPy")
+print(f"Criando uma array.\nPrimeira coisa tem que criar um array NumPy: arr14 = dsa.array([15, 23, 63, 94, 74])")
+arr14 = dsa.array([15, 23, 63, 94, 75])
+print(f"Em Estatístoca, a média é uma medida de tendência central que representa o valor central de um conjunto de dados. É calculado somente-se todos os valores do conjuto de dados e dividindo-se pelo número de observações")
+print("Com a bíblioteca NumPy, é só chamar a função '.maen()' e passar como parametro a variável que contém o vetor arr14 nesse exemplo.\nEntão fica assim: dsa.maen(arr14)")
+print(f"Resultado: {dsa.mean(arr14)}\n")
+print("O desvio padrão é uma medida estatística de dispensão que indica o quanto os valores de um conjunto de dados se afastam da média. Ele é calculado como a raiz quadrada da variável, que é a média dos quadrados das diferencas entre cada valore e a média.\n\nO desvio padrão é uma medida útil porque permite avaliar a variabilidade dos dados em torno da média. Se os valores estiverem próximos da média, o desvio padrão será baixo, indicando que os dados têm pouco variabilidade. Por outro lado, se os valores estiverem muito distante da média, desvio padrão será alto, indicando que os dados têm alta variabilidade.\n\nO desvio padrão é amplamente ultilizado em Análise e Ciência de Dados, oara avaliar a consistência dos dados e comparar conjuntos de dados diferentes. É importante notar que o desvio padrão pode ser influienciado por valores extremos (outliers) e pode ser afetados por diferentes distribuições de dados.\n")
+print(f"Uma forma de usar o desvio padrão de uma média é usar a Bíblioteca NumPy, o metodo .std().\nEx:dsa.std(aar14).\nO resultado é {dsa.std(arr14)}.\nComo o valor decimal ficou grande, da para simplificar usando a formatação, dsa.std(arr14):.2f.\nEntão, fica assim: {dsa.std(arr14):.2f}")
+print("O valor mostrado com o método .std(). Mostra que o valor esta bem desperço, não significa que os valores estão errado ou que os dados estão errados, mas mostra que estão distante os valores.\n")
+print("VARIÂNCIA... Também é posivel e nescessario fazer outras estatísticas além di desvio padrão, por isso também é usada a variância.")
+print("A variância é uma medida estatística que quantifica a dispersão dos valores em um conjunto de dados em relação à média. Ela é calculada com a média dos quadrados das diferenças entre cada valor e a média.\n\nA fórmula para o cálculo da variância é:")
+print("""
+    var = 1/n*Ʃ(xi - ẍ)^2
+      
+    Onde:
+      . var é a variância.
+      . n é o número de observações.
+      . Ʃ é o somatório.
+      . xi é o i-ésimo valor no conjunto de dados.
+      . ẍ é a média dos valores.
+    
+    A variância é uma medida útil para avaliar a variabilidade dos dados em torno da média. Se a variância for baixa, isso indica que os valores estão próximos da média e têm pouca variabilidade. Por outro lado, se a variância for alta, isso indica que os valores estão distrantes da média e têm alta variabilidade.
+""")
+print(f"Para aplicar a variância é só usar o método .vat() da Bíblioteca NumPy.\nUm exemplo que podemos ver é dsa.var(arr14), o resultado é: {dsa.var(arr14)}.\nDa mesmo forma, para simplificar o valor basta formatar as casas decimais, então fica assim: {dsa.var(arr14):.2f}.\n")
+print("LER O MANUAL EM PDF NO CAPÍTULO 9 SOBRE QUANDO USAR A VARIÂNCIA E DESVIO PADRÃO PARA ANÁLISE DE DADOS.\n")
+print("Operações Matemáticas com Arrays NumPy.")
+print("Criando array com a Bíblioteca Numpy, usando o arange. Será o seguinte código.")
+arr15 = dsa.arange(1, 10)
+print(f"O resultado do arange de 1, 10 é: {arr15} *Lembrete, 0 número 10 não aparece porque ele é absoluto.")
+print(f"Um exemplo do que podemos fazer com a matématica na bíbliotera NumPy é somar os valores com o método .sum(), obviamente esse é um exemplo simple mas, seve de exemplo.\nO resultado da soma de todos os valores do array arr15 é: {dsa.sum(arr15)}\n")
+print(f"Outro exemplo é que pode ser calculado o produto com o método .prod(), o resultado é: {dsa.prod(arr15)}. Produto é a multiplicação de todos os valores dentro da arry.")
+print(f"A soma acumulada é outo exemplo, {dsa.cumsum(arr15)}. É só somar o primeiro elemento com o segundo, depois somar o segundo com o terceito. Essa seguençia vai até o fim dos elementos.")
+print("Exemplo com 2 arrays. Um chamado arr16 e o outro chamado arr17.")
+arr16 = dsa.array([3, 2, 1])
+arr17 = dsa.array([1, 2, 3])
+arr18 = dsa.add(arr16, arr17)
+print(f"O valor dos arrays são:\nArr16 é: {arr16}.\nArr17 é: {arr17}.\n")
+print(f"Pode ser usado o método .add(), da bíblioteca NumPy para somar os elementos das arrays.\nO resultado da soma entre os elementos é: {arr18}. # Lembrando, os valores somados não é o total de todos o conteúdo, foi somado os valores referênte a cada elemento de cada indice de cada array.\n")
+print("Para multiplicar duas matrizes NumPy, podemos usar a função dot() ou o operador @. Ambos os métodos executam a multiplicação matricial. É importante lembrar que, para a multipicação de matrizes possa ser executada, o número de colunas da primeira matriz deve ser igual ao número de linhas do segunda matriz.\n\nHá varias forma de multiplicar elementos de matrizes NumPy. A função dot() é uma método bastante utilizado\n")
+print("Exemplificando com duas novas matrizes.")
+print("A primeira matriz é a arr19 e a segunda é arr20. #Lembre é uma matriz de 2 dimenções.")
+arr19 = dsa.array([[1, 2], [3, 4]])
+arr20 = dsa.array([[5, 6], [0, 7]])
+arr21 = dsa.dot(arr19, arr20)
+print(f"O valor da matriz arr19 é:\n{arr19}.\nO valor da segunda matriz é:\n{arr20}.\n")
+print(f"Como dito o arra19 é uma matriz de {arr19.shape}. Podemos ter a certeza disso porque foi usado o atributo '.shape'.")
+print(f"Como dito o arra20 é uma matriz de {arr20.shape}. Podemos ter a certeza disso porque foi usado o atributo '.shape'.\n")
+print(f"Agora será feito a multiplicação das matrizes, esse exemplo será usado a matrix arr19 e arr20.\nE para fazer essa Multiplicação é só usar o método .dot(), pondo as arrys como elementos do método.\nfica assim: arr21 = dsa.dot(arr19, arr20).\nO resutado é:\n{arr21}")
