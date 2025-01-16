@@ -279,3 +279,21 @@ print(f"O valor da matriz arr19 é:\n{arr19}.\nO valor da segunda matriz é:\n{a
 print(f"Como dito o arra19 é uma matriz de {arr19.shape}. Podemos ter a certeza disso porque foi usado o atributo '.shape'.")
 print(f"Como dito o arra20 é uma matriz de {arr20.shape}. Podemos ter a certeza disso porque foi usado o atributo '.shape'.\n")
 print(f"Agora será feito a multiplicação das matrizes, esse exemplo será usado a matrix arr19 e arr20.\nE para fazer essa Multiplicação é só usar o método .dot(), pondo as arrys como elementos do método.\nfica assim: arr21 = dsa.dot(arr19, arr20).\nO resutado é:\n{arr21}")
+print(f"O processo de multiplicão de uma matriz pelo método .dot().\nO exemplo que será usado é dos arrays arr19 e arr20.\nOnde os valores do arr19 é:\n{arr19}.\nE os valores do arr20 é:\n{arr20}.\nA multiplicação é feita da seguinte forma.\nA primeira linha da primeira matrix é multiplicado com a primeira coluna da primeira matriz. E depois são somadas. Após isso, é feita a multiplicação da primeira linha com a segunda coluna...\nSegue abaixo exemplo gráfico.")
+print("""
+        1 2  X  5 6   =   1*5 + 2*0   1*6 + 2*7   =   5  20
+        3 4  x  0 7   =   3*5 + 4*0   3*6 + 4*7   =   15 46
+      """)
+print(f"LEMBRETE.\nPara utilizar o método .dot() as matrizes tem que ter as especificações correta... O número de colunas da primeira matriz tem que ser mesmo número de linhas da segunda matriz. Senão da ERRO.")
+arr21 = arr19 @ arr20
+print(f"Além do metodo .dot() para fazer a multiplicação pode ser usado o simbulo @.\nVejá o resultado trucando o método .dot() por @: 'arr21 = arr19 @ arr20':\n{arr21}\nO @ foi lançado na versão 3.5 do Python")
+arr21A = arr19 @ arr20
+print(f"Outra opção para multiplicar matrizes é o método .tensordot() faz a mesma coisa que @ e .dot().\nVejá o resultado usando o .tensordot(): 'arr22 = arr19 @ arr20'.\n{arr21A}\n")
+print(f"ConceitoSlicing (FATIAMENTO) de Arrays NumPy\n")
+print(f"Será criado uma array de 3 dimenções usando o método função .diag(), o comando completo é arr22 = dsa.diag(dsa.arange(3)).")
+arr22 = dsa.diag(dsa.arange(3))
+print(f"O resultado é:\n{arr22}\n")
+print(f"Comprovando a quantidade de dimenção usando o método .share(): {arr22.shape}.\n")
+print(f"Fariando com anotação de índixe resultado do arr22[1,1], o resultado é o conteúdo da linha 1 com a coluna 1: {arr22[1,1]}")
+print(f"Solicitando o conteúdo da linha 1, arr22[1].\nResultado:\n{arr22[1]}\n")
+print(f"Solicitando o conteúdo de todas as linhas mas a coluna 2, arr22[:,2].\nResultado:\n{arr22[:,2]}")
