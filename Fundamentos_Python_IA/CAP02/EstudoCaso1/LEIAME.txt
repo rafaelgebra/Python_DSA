@@ -17,6 +17,8 @@ pip install -r requirements.txt
 
 streamlit run dsa_assistente.py
 
+Chave Devaos40 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
+
 # Exemplos de uso do assistente:
 
 # Como crio um hello world em Python?
