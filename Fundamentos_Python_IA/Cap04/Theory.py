@@ -132,3 +132,76 @@ print()
 print("estrutura de dados em Python - Tuplas")
 print("Estrutura de dados em Python - Dicionários")
 print("Estrutura de dados em Python - Conjuntos (Sets)")
+
+#TUPLAS
+print("\nEstrutura de dados - TUPLAS")
+print("Tuplas são coleções ordenadas e imutáveis de itens. Uma vez criada, não podem ser alteradas.")
+#Criando uma tupla.
+print("Criando uma tupla")
+coordenadas = (10.0, 20.5)
+print(f"Com o método type() consigo saver qual o tipo do elemento: {type(coordenadas)}")
+print(f"Tupla de coordenadas: {coordenadas}\n")
+print("Para acessar elementos da tupla, é usado o índice '[]' para acessar esses elementos")
+print(f"Coordenada X: {coordenadas [0]}")
+print(f"Coordenada Y: {coordenadas [1]}\n")
+print("não é possível modificar uma tupla depois de criada, \nSegue exemplo:\n print(coordenadas [0] = 14) : isso gerará um erro.\n")
+#print(coordenadas [0] = 14)
+print("As tuplas são úteis para dados que não devem ser alterados.")
+dias_semana = ("Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo")
+print(f"O primeiro dia da semana é: {dias_semana[0]}\n")
+#DICIONÁRIOS
+print("Estrutura de dados - DICIONÁRIOS")
+print("Criando uma dicionárop de informações de um aluno:")
+aluno = {
+    "nome" : "Bob",
+    "idade" : 22,
+    "curso" : "Data Science Para análise Multivariada",
+    "aluno_ativo" : True
+}
+print(type(aluno))
+print(f"Dicionario do aluno: {aluno}")
+print(f"Acessando os valores dela chave")
+print(f"Nome do aluno: {aluno['nome']}")
+print(f"Curso: {aluno.get('curso')}\n") # get é uma forma segura de acessar o valor da chave.
+print("Agora vamos ver como é feita a adição de um novo par de chave-valore no dicionário:")
+aluno["Cidade"] = "São paulo"
+print(f"Dicionário com o valor adicionado: {aluno}\n")
+print("Agora vamos modificar um valor já existente no dicionário:")
+aluno["idade"] = 24
+print(f"Dicionário com o valor alterado: {[aluno["idade"]]}\n")
+print("Agora vamos remover/deletar um par de chave-valor de um dicionário:")
+del aluno["aluno_ativo"]
+print(f"Resultado do dicionário após a remoção da chave 'aluno_ativo': {aluno}\n")
+print(f"Mostrando a quantidade de itens em um dicionário com a função len(): Tem {len(aluno)} itens nesse dicionário\n")
+
+#Estrutura de dados  - Conjustos (Sets)
+print("Estrutura de dados - Conjuntos (Sets)")
+print("Conjuntos são coleções não ordenadas de itens únicos. Eles são úteis para remover duplicatas e realixar perações matemáticas de conjutos (união e interseção).")
+#Criando um conjunto
+print("Vamos criar um conjunto de números:")
+numeros = {1,2,3,4,2,3,5}
+print(f"Esse é um exemplo de Conjunto/Sets: {numeros}\n")
+print(type(numeros))
+print(f"Conjunto de números (sem duplicatas): {numeros}\n")
+print("agora vamos adicionar um item")
+numeros.add(6)
+print(f"Após adicionar o valor 6 ao conjunto/sets: {numeros}\n")
+print("Agora vamos remover um item")
+numeros.remove(2)
+print(f"Resultado após remover o valor 2: {numeros}\n")
+print("Vamos ver agora operações de conjuntos:")
+print("Criando dois conjuntos: conjunto_a = {1,2,3,4} e conjunto_b = {3, 4, 5, 6}")
+conjunto_a = {1, 2, 3, 4} 
+conjunto_b = {3, 4, 5, 6}
+print("Unindo os dois conjuntos (todos os elementos) (uniao = conjunto_a.union(conjunto_b)")
+uniao = conjunto_a.union(conjunto_b)
+print(f"O resultado da união dos dois conjuntos: {uniao}\n")
+print("Vamos agora fazer uma interseção (elementos que estão em ambos os conjustos):")
+intersecao = conjunto_a.intersection(conjunto_b)
+print(f"O resultado da interseção dos dois conjuntos A e B: {intersecao}\n")
+#conversão entre tipos de dados (Type Casting)
+print("Vamos ver como funciona a conversão entre tipos de dados (type Casting):\nA conversão de tipos de dados é converter de um tipo de dado para outro.")
+#converter de String para número integer
+numero_em_texto = "123"
+numero_inteiro = int(numero_em_texto)
+print(F"O texto em String '{numero_em_texto}'que é do tipo {type(numero_em_texto)}, foi convertido para número inteiro: {numero_inteiro}, e agora é do type: {type(numero_inteiro)}\n")
