@@ -205,3 +205,18 @@ print("Vamos ver como funciona a conversão entre tipos de dados (type Casting):
 numero_em_texto = "123"
 numero_inteiro = int(numero_em_texto)
 print(F"O texto em String '{numero_em_texto}'que é do tipo {type(numero_em_texto)}, foi convertido para número inteiro: {numero_inteiro}, e agora é do type: {type(numero_inteiro)}\n")
+#convertendo String para número float
+numero_decimal_em_texto = "45.67"
+numero_float = float(numero_decimal_em_texto)
+print(f"O texto em String '{numero_decimal_em_texto}' que é do tupo {type(numero_decimal_em_texto)}, foi convertido para número float: {numero_float}, e agora é do tipo: {type(numero_float)}")
+#Convertendo de número para String
+idade = 25
+idade_texto = str(idade)
+print(f"O número: {idade} é do tipo {type(idade)}, foi convertido para String:'{idade_texto}', e agora é do tipo {type(idade_texto)}")
+#Conversão entre estruturas de dados.
+lista_com_duplicatas = [1, 2, 2, 3, 4, 4, 4, 5]
+conjunto_unico = set(lista_com_duplicatas)
+lista_sem_duplicatas = list(conjunto_unico)
+print(f"\nLista original: {lista_com_duplicatas}")
+print(f"\nConvertido para Conjunto/Sets (remove duplicatas) {conjunto_unico}")
+print(f"\nConvertida de valta para lista {lista_sem_duplicatas}")
